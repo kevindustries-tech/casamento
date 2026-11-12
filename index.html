@@ -1,0 +1,1336 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- PAGINA: daqui até </head> entra na prévia do Artifact (gerar_previa.py) -->
+<title>Casamento Bianca &amp; Kevin</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Lista de presentes e confirmação de presença do casamento de Bianca e Kevin.">
+<meta property="og:title" content="Casamento Bianca &amp; Kevin">
+<meta property="og:description" content="Lista de presentes e confirmação de presença.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400..700,0..100&family=Montserrat:wght@300;400;500;600&display=swap">
+<style>
+/* Layout: convite em papel. Textos numa coluna central estreita, presentes numa grade de
+   cartões retos (como no site de referência) e uma faixa oliva para a contagem e o rodapé. */
+:root {
+  --papel: #F8F9F1;        /* fundo, medido no site de referência */
+  --papel-2: #EEEFE3;      /* cartões */
+  --pilula: #FFFFFF;       /* campos e selo da data */
+  --linha: #DCDDCB;
+  --tinta: #2A2B22;
+  --tinta-2: #62635A;
+  --oliva: #9FA072;        /* acento decorativo, medido no site de referência */
+  --oliva-texto: #666740;  /* acento quando é texto */
+  --botao: #6F7046;
+  --botao-hover: #5D5E39;
+  --botao-texto: #FFFFFF;
+  --faixa: #6F7046;
+  --faixa-texto: #F8F9F1;
+  --sobre-foto: #FDFDF8;
+  --veu: rgba(24, 25, 19, .5);
+  --erro: #A1452F;
+  --sombra-foto: rgba(42, 43, 34, .55);
+  /* Ilustrações dos presentes: iguais nos dois temas, como foto de produto */
+  --foto-fundo: #FBFBF6; --foto-spot: #ECEEE2;
+  --il-c: #FFFFFF; --il-s: #E1E2D6; --il-e: #3B3C33; --il-e2: #5C5E51; --il-l: #6F7046;
+  --il-a: #9FA072; --il-a2: #C9CBA3; --il-m: #C9A67C; --il-m2: #A8855D; --il-t: #B5B88F;
+  --il-t2: #989B72; --il-v: #D6E0DC; --il-agua: #A9C3C4; --il-me: #C0C2B7; --il-cf: #6E4F36;
+  --il-ch: rgba(59, 60, 51, .14);
+  --display: "Fraunces", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --texto: "Montserrat", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --lado-e: max(16px, env(safe-area-inset-left, 0px));
+  --lado-d: max(16px, env(safe-area-inset-right, 0px));
+  color-scheme: light;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --papel: #1B1C16; --papel-2: #25261E; --pilula: #2C2D24; --linha: #3B3C30;
+    --tinta: #ECEDE1; --tinta-2: #AEAF9D;
+    --oliva: #A6A779; --oliva-texto: #C4C59B;
+    --botao: #B9BA8A; --botao-hover: #CACB9E; --botao-texto: #1B1C16;
+    --faixa: #2C2D23; --faixa-texto: #ECEDE1;
+    --veu: rgba(0, 0, 0, .6); --erro: #E3907A; --sombra-foto: rgba(0, 0, 0, .8);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --papel: #1B1C16; --papel-2: #25261E; --pilula: #2C2D24; --linha: #3B3C30;
+  --tinta: #ECEDE1; --tinta-2: #AEAF9D;
+  --oliva: #A6A779; --oliva-texto: #C4C59B;
+  --botao: #B9BA8A; --botao-hover: #CACB9E; --botao-texto: #1B1C16;
+  --faixa: #2C2D23; --faixa-texto: #ECEDE1;
+  --veu: rgba(0, 0, 0, .6); --erro: #E3907A; --sombra-foto: rgba(0, 0, 0, .8);
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(72px + env(safe-area-inset-top, 0px)); }
+html.travado { overflow: hidden; }
+body {
+  margin: 0;
+  background: var(--papel);
+  color: var(--tinta);
+  font: 400 16px/1.65 var(--texto);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px);
+  z-index: 10; background: var(--papel);
+}
+img { max-width: 100%; }
+a { color: var(--oliva-texto); }
+:focus-visible { outline: 2px solid var(--oliva-texto); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+.miolo {
+  max-width: 1112px; margin-inline: auto;
+  padding-left: var(--lado-e); padding-right: var(--lado-d);
+}
+.ico { fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.pular {
+  position: absolute; left: 16px; top: -60px; z-index: 70;
+  background: var(--botao); color: var(--botao-texto); padding: 10px 14px; text-decoration: none;
+}
+.pular:focus { top: 12px; }
+.faixa-previa {
+  background: var(--botao); color: var(--botao-texto); text-align: center;
+  font: 500 12px/1.4 var(--texto); letter-spacing: .08em;
+  padding-block: 8px; padding-left: var(--lado-e); padding-right: var(--lado-d);
+}
+
+/* Topo */
+.topo {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 30;
+  background: color-mix(in srgb, var(--papel) 94%, transparent);
+  -webkit-backdrop-filter: saturate(1.2) blur(8px); backdrop-filter: saturate(1.2) blur(8px);
+  border-bottom: 1px solid var(--linha);
+}
+.topo-in { position: relative; display: flex; align-items: center; gap: 14px; min-height: 64px; }
+.monograma {
+  margin-right: auto; color: var(--tinta); text-decoration: none;
+  font: 400 21px/1 var(--texto); letter-spacing: .1em; white-space: nowrap;
+}
+.monograma span { color: var(--oliva); }
+.menu { display: flex; gap: 24px; }
+.menu a {
+  color: var(--tinta-2); text-decoration: none; padding: 10px 0;
+  font: 500 11.5px/1 var(--texto); letter-spacing: .16em; text-transform: uppercase;
+}
+.menu a:hover { color: var(--tinta); }
+.btn-menu, .btn-carrinho {
+  height: 44px; background: transparent; color: var(--tinta); cursor: pointer;
+  border: 1px solid var(--linha); border-radius: 0; font: 500 11.5px/1 var(--texto);
+  letter-spacing: .16em; text-transform: uppercase;
+}
+.btn-menu { display: none; padding: 0 14px; }
+.btn-carrinho { position: relative; width: 44px; display: grid; place-items: center; padding: 0; }
+.btn-carrinho .ico { width: 22px; height: 22px; }
+.btn-carrinho .qtd {
+  position: absolute; top: -7px; right: -7px; min-width: 20px; height: 20px; padding: 0 5px;
+  border-radius: 10px; background: var(--botao); color: var(--botao-texto);
+  font: 600 11px/20px var(--texto); letter-spacing: 0; text-align: center;
+}
+@media (max-width: 860px) {
+  .btn-menu { display: inline-flex; align-items: center; }
+  .menu {
+    display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; gap: 0;
+    background: var(--papel); border-bottom: 1px solid var(--linha);
+    padding: 4px var(--lado-d) 12px var(--lado-e);
+    margin-inline: calc(-1 * var(--lado-e)) calc(-1 * var(--lado-d));
+  }
+  .menu.aberto { display: flex; }
+  .menu a { padding: 15px 0; border-bottom: 1px solid var(--linha); }
+  .menu a:last-child { border-bottom: 0; }
+}
+
+/* Botões */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 46px; padding: 12px 24px; border: 1px solid var(--botao); border-radius: 0;
+  background: var(--botao); color: var(--botao-texto); cursor: pointer; text-decoration: none;
+  font: 500 14px/1.2 var(--texto); letter-spacing: .04em; transition: background .2s, border-color .2s;
+}
+.btn:hover { background: var(--botao-hover); border-color: var(--botao-hover); }
+.btn-linha { background: transparent; color: var(--oliva-texto); border-color: var(--oliva); }
+.btn-linha:hover { background: var(--papel-2); border-color: var(--oliva); }
+.btn[disabled] { opacity: .5; cursor: not-allowed; }
+.link-botao {
+  background: none; border: 0; padding: 8px 0; color: var(--tinta-2); cursor: pointer;
+  font: 400 14px/1.4 var(--texto); text-decoration: underline; text-underline-offset: 3px;
+}
+
+/* Abertura */
+.hero { position: relative; overflow: hidden; text-align: center; padding-block: clamp(56px, 10vw, 120px) clamp(48px, 8vw, 96px); }
+.hero-grade { display: grid; grid-template-areas: "titulo" "acoes"; justify-items: center; row-gap: 26px; }
+.hero-titulo { grid-area: titulo; display: flex; flex-direction: column; align-items: center; gap: 18px; min-width: 0; }
+.hero-grade .acoes { grid-area: acoes; }
+.hero-foto { grid-area: foto; margin: 0; }
+.hero-foto img { display: block; width: 100%; object-fit: cover; }
+.sobre { margin: 0; color: var(--oliva-texto); font: 500 12px/1.2 var(--texto); letter-spacing: .32em; text-transform: uppercase; }
+.nomes {
+  margin: 0; color: var(--tinta); font-family: var(--display); font-weight: 600;
+  font-variation-settings: "SOFT" 100; font-size: clamp(3rem, 11.5vw, 7.25rem);
+  line-height: .98; letter-spacing: -.015em; text-wrap: balance;
+}
+.nomes .e { color: var(--oliva); font-weight: 400; padding-inline: .05em; }
+@media (max-width: 560px) {
+  .nomes > span { display: block; }
+  .nomes .e { font-size: .6em; line-height: 1.25; }
+}
+.ramo { display: block; width: min(440px, 86%); height: auto; color: var(--oliva); overflow: visible; }
+.data-pill {
+  margin: 0; padding: 10px 20px; background: var(--pilula); border: 1px solid var(--linha); color: var(--oliva-texto);
+  font: 500 13px/1 var(--texto); letter-spacing: .24em; text-transform: uppercase; font-variant-numeric: tabular-nums;
+}
+.acoes { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+.fita {
+  position: absolute; top: 0; right: max(24px, calc(env(safe-area-inset-right, 0px) + 12px));
+  width: 30px; padding: 14px 0 24px; background: var(--botao); color: var(--botao-texto);
+  writing-mode: vertical-rl; font: 600 10.5px/30px var(--texto); letter-spacing: .24em; text-transform: uppercase;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 10px), 0 100%);
+}
+/* Com foto, no celular: a foto abre a página com os nomes por cima, como no site de referência */
+@media (max-width: 899px) {
+  .hero.com-foto { padding-block: 0 40px; }
+  .hero.com-foto .hero-grade { grid-template-areas: "foto" "acoes"; row-gap: 28px; }
+  .hero.com-foto .hero-foto {
+    position: relative; align-self: start; justify-self: stretch; aspect-ratio: 4 / 5; max-height: 640px;
+    margin-inline: calc(-1 * var(--lado-e)) calc(-1 * var(--lado-d));
+  }
+  .hero.com-foto .hero-foto img { position: absolute; inset: 0; height: 100%; object-position: 50% 30%; }
+  .hero.com-foto .hero-foto::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(20, 21, 16, 0) 42%, rgba(20, 21, 16, .78));
+  }
+  .hero.com-foto .hero-titulo { grid-area: foto; align-self: end; position: relative; z-index: 1; gap: 12px; padding-bottom: 26px; }
+  .hero.com-foto .ramo { display: none; }
+  .hero.com-foto .nomes { font-size: clamp(2.3rem, 10.5vw, 3.6rem); }
+  .hero.com-foto .nomes > span { display: inline; }
+  .hero.com-foto .nomes .e { font-size: 1em; }
+  .hero.com-foto .sobre, .hero.com-foto .nomes, .hero.com-foto .nomes .e { color: var(--sobre-foto); }
+  .hero.com-foto .fita { z-index: 2; }
+}
+/* Com foto, no computador: texto à esquerda e a foto emoldurada à direita */
+@media (min-width: 900px) {
+  .hero.com-foto { padding-block: clamp(48px, 6vw, 84px); }
+  .hero.com-foto .hero-grade {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
+    grid-template-areas: "titulo foto" "acoes foto"; column-gap: 64px; row-gap: 26px;
+  }
+  .hero.com-foto .hero-titulo { align-self: end; }
+  .hero.com-foto .acoes { align-self: start; }
+  .hero.com-foto .hero-foto { position: relative; isolation: isolate; width: 100%; max-width: 420px; }
+  .hero.com-foto .hero-foto img { aspect-ratio: 3 / 4; height: auto; }
+  .hero.com-foto .hero-foto::before { content: ""; position: absolute; inset: 16px -16px -16px 16px; border: 1px solid var(--oliva); z-index: -1; }
+  .hero.com-foto .nomes { font-size: clamp(3.4rem, 6.4vw, 6rem); }
+  .hero.com-foto .nomes > span { display: block; }
+  .hero.com-foto .nomes .e { font-size: .6em; line-height: 1.25; }
+}
+
+/* Contagem */
+.contagem { background: var(--faixa); color: var(--faixa-texto); text-align: center; padding-block: 34px 38px; }
+.contagem .rotulo { margin: 0; font: 500 12px/1 var(--texto); letter-spacing: .3em; text-transform: uppercase; }
+.relogio { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; max-width: 520px; margin: 18px auto 0; }
+.relogio b { display: block; font: 300 clamp(30px, 7vw, 46px)/1.05 var(--texto); font-variant-numeric: tabular-nums; }
+.relogio span { font-size: 11px; letter-spacing: .2em; text-transform: uppercase; opacity: .85; }
+
+/* Seções */
+.secao { padding-block: clamp(60px, 8vw, 100px); }
+.secao + .secao { border-top: 1px solid var(--linha); }
+.titulo { margin: 0; text-align: center; color: var(--tinta); font: 300 clamp(1.65rem, 3.6vw, 2.05rem)/1.25 var(--texto); text-wrap: balance; }
+.subtitulo { margin: .9em 0 0; text-align: center; color: var(--tinta-2); font: 400 12.5px/1.6 var(--texto); letter-spacing: .22em; text-transform: uppercase; text-wrap: balance; }
+.traco { width: 48px; height: 3px; border: 0; margin: 22px auto 30px; background: var(--oliva); }
+.texto { max-width: 62ch; margin-inline: auto; text-align: center; color: var(--tinta-2); text-wrap: pretty; }
+.texto p { margin: 0 0 1em; }
+.texto p:last-child { margin-bottom: 0; }
+.a-preencher { border: 1px dashed var(--oliva); padding: 16px; color: var(--oliva-texto); font-size: 14px; }
+.galeria { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(14px, 3vw, 30px); max-width: 680px; margin: 38px auto 0; }
+.foto { margin: 0; padding: clamp(6px, 1.2vw, 10px); background: var(--pilula); box-shadow: 0 20px 34px -24px var(--sombra-foto); }
+.foto:nth-child(odd) { transform: rotate(-1.6deg); }
+.foto:nth-child(even) { transform: rotate(1.4deg); margin-top: 26px; }
+.foto img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; }
+.compartilhar { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 36px; text-align: center; color: var(--tinta-2); font-size: 14px; }
+.compartilhar p { margin: 0; }
+.btn .ico { width: 18px; height: 18px; }
+
+/* Cerimônia e festa */
+.locais { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 20px; max-width: 780px; margin-inline: auto; }
+.local { background: var(--papel-2); padding: 30px 24px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.local .rotulo { margin: 0; color: var(--oliva-texto); font: 500 11.5px/1 var(--texto); letter-spacing: .26em; text-transform: uppercase; }
+.local h3 { margin: 4px 0 0; font: 600 26px/1.15 var(--display); font-variation-settings: "SOFT" 100; color: var(--tinta); }
+.local p { margin: 0; color: var(--tinta-2); }
+.local .hora { color: var(--tinta); font-weight: 500; }
+
+/* Presentes */
+.selos { list-style: none; margin: 22px 0 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 24px; color: var(--tinta-2); font-size: 13.5px; }
+.selos li { display: inline-flex; align-items: center; gap: 8px; }
+.selos .ico { width: 20px; height: 20px; color: var(--oliva-texto); }
+.filtros { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 30px; }
+.chip {
+  min-height: 40px; padding: 10px 16px; background: transparent; border: 1px solid var(--linha); border-radius: 0;
+  color: var(--tinta-2); cursor: pointer; font: 500 11.5px/1 var(--texto); letter-spacing: .14em; text-transform: uppercase;
+}
+.chip:hover { border-color: var(--oliva); color: var(--tinta); }
+.chip[aria-pressed="true"] { background: var(--botao); border-color: var(--botao); color: var(--botao-texto); }
+.grade { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; margin-top: 30px; }
+@media (max-width: 900px) { .grade { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; } }
+.cartao { min-width: 0; display: flex; flex-direction: column; gap: 10px; padding: 16px 16px 18px; background: var(--papel-2); text-align: center; }
+.figura, .livre .figura-mini {
+  position: relative; display: grid; place-items: center; overflow: hidden; color: var(--il-l);
+  background: radial-gradient(circle at 50% 54%, var(--foto-spot) 0 55%, var(--foto-fundo) 55.4%);
+}
+.figura { aspect-ratio: 1 / 1; max-width: 100%; }
+.figura .ico { width: 44%; height: 44%; stroke-width: 1.3; }
+.figura img { width: 100%; height: 100%; object-fit: cover; }
+.il { display: block; width: 100%; height: 100%; }
+.il-c { fill: var(--il-c); } .il-s { fill: var(--il-s); } .il-e { fill: var(--il-e); } .il-e2 { fill: var(--il-e2); }
+.il-l { fill: var(--il-l); } .il-a { fill: var(--il-a); } .il-a2 { fill: var(--il-a2); } .il-m { fill: var(--il-m); }
+.il-m2 { fill: var(--il-m2); } .il-t { fill: var(--il-t); } .il-t2 { fill: var(--il-t2); } .il-v { fill: var(--il-v); }
+.il-agua { fill: var(--il-agua); } .il-me { fill: var(--il-me); } .il-cf { fill: var(--il-cf); } .il-ch { fill: var(--il-ch); }
+.ils-a { stroke: var(--il-a); } .ils-e { stroke: var(--il-e); } .ils-l { stroke: var(--il-l); }
+.ils-c { stroke: var(--il-c); } .ils-m2 { stroke: var(--il-m2); }
+.selo-destaque {
+  position: absolute; top: 8px; left: 8px; padding: 5px 8px; background: var(--botao); color: var(--botao-texto);
+  font: 600 10px/1.1 var(--texto); letter-spacing: .14em; text-transform: uppercase;
+}
+.cartao h3 {
+  margin: 4px 0 0; min-height: 2.7em; display: flex; align-items: center; justify-content: center;
+  color: var(--tinta); font: 500 15.5px/1.35 var(--texto); text-wrap: balance;
+}
+.produto { margin: -4px 0 0; min-height: 2.8em; color: var(--tinta-2); font-size: 12.5px; line-height: 1.4; text-wrap: balance; }
+.preco { margin: 2px 0 0; color: var(--tinta); font: 600 19px/1.2 var(--texto); font-variant-numeric: tabular-nums; }
+.valor { margin: 0; color: var(--tinta-2); font-size: 14px; font-variant-numeric: tabular-nums; }
+.valor strong { color: var(--tinta); font-weight: 600; }
+.acoes-cartao { display: flex; flex-direction: column; gap: 6px; margin-top: auto; }
+.nota-precos { margin: 18px 0 0; text-align: center; color: var(--tinta-2); font-size: 13px; }
+.no-carrinho { margin: 0; min-height: 1.4em; color: var(--oliva-texto); font-size: 12.5px; }
+.progresso { display: flex; flex-direction: column; gap: 6px; color: var(--tinta-2); font-size: 12.5px; font-variant-numeric: tabular-nums; }
+.barra { height: 4px; background: var(--linha); }
+.barra i { display: block; height: 100%; background: var(--oliva); }
+.cartao .btn { width: 100%; }
+.cartao.completo { opacity: .55; }
+.cartao.completo .btn { background: transparent; border-color: var(--oliva); color: var(--tinta-2); }
+@media (max-width: 520px) {
+  .cartao { padding: 10px 10px 12px; gap: 8px; }
+  .cartao h3 { font-size: 14px; }
+  .cartao .btn { padding-inline: 8px; font-size: 13px; }
+  .cartao .longo { display: none; }
+}
+.livre {
+  margin-top: 22px; padding: 22px; background: var(--papel-2);
+  display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 16px 22px;
+}
+.livre .figura-mini { width: 76px; height: 76px; }
+.livre h3 { margin: 0; color: var(--tinta); font: 500 17px/1.3 var(--texto); }
+.livre p { margin: 3px 0 0; color: var(--tinta-2); font-size: 14px; }
+.livre form { display: flex; gap: 10px; align-items: stretch; }
+.campo-livre { display: flex; align-items: center; border: 1px solid var(--linha); background: var(--pilula); padding-left: 12px; }
+.campo-livre span { color: var(--tinta-2); }
+.campo-livre input { width: 120px; border: 0; background: transparent; }
+.campo-livre:focus-within { outline: 2px solid var(--oliva-texto); }
+.campo-livre input:focus { outline: none; }
+.livre .erro-livre { grid-column: 2 / -1; margin: 0; }
+@media (max-width: 640px) {
+  .livre { grid-template-columns: auto minmax(0, 1fr); }
+  .livre form, .livre .erro-livre { grid-column: 1 / -1; }
+  .campo-livre { flex: 1; }
+  .campo-livre input { width: 100%; }
+}
+
+/* Mural */
+.mural { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); gap: 16px; }
+.recado { margin: 0; padding: 24px 22px; background: var(--papel-2); display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.recado blockquote { margin: 0; color: var(--tinta); font: 400 18px/1.5 var(--display); font-variation-settings: "SOFT" 100; overflow-wrap: anywhere; }
+.recado figcaption { color: var(--oliva-texto); font-size: 11.5px; letter-spacing: .16em; text-transform: uppercase; }
+.vazio { grid-column: 1 / -1; margin: 0; padding: 30px 16px; text-align: center; color: var(--tinta-2); border: 1px dashed var(--linha); }
+
+/* Formulários */
+.form { max-width: 560px; margin-inline: auto; display: flex; flex-direction: column; gap: 18px; }
+.campo { display: flex; flex-direction: column; gap: 7px; min-width: 0; margin: 0; padding: 0; border: 0; }
+.campo label, .campo legend { padding: 0; color: var(--tinta); font-size: 13.5px; font-weight: 500; letter-spacing: .02em; }
+.campo label span, .campo legend span { color: var(--tinta-2); font-weight: 400; }
+.campo legend { margin-bottom: 7px; }
+.opcoes { display: grid; gap: 8px; }
+.duas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+input[type="text"], input[type="tel"], input[type="number"], textarea {
+  width: 100%; min-height: 46px; padding: 11px 12px; border: 1px solid var(--linha); border-radius: 0;
+  background: var(--pilula); color: var(--tinta); font: 400 16px/1.4 var(--texto);
+}
+textarea { resize: vertical; min-height: 92px; }
+input:focus, textarea:focus { outline: 2px solid var(--oliva-texto); outline-offset: -1px; }
+.opcao { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border: 1px solid var(--linha); background: var(--pilula); cursor: pointer; }
+.opcao input, .marcar input { width: 18px; height: 18px; margin: 0; accent-color: var(--botao); flex: none; }
+.marcar { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: var(--tinta-2); cursor: pointer; }
+.contador { align-self: flex-end; color: var(--tinta-2); font-size: 12px; font-variant-numeric: tabular-nums; }
+.status { margin: 0; min-height: 1.4em; font-size: 14px; color: var(--erro); }
+.mel { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.feito { text-align: center; padding: 26px 18px; background: var(--papel-2); max-width: 560px; margin-inline: auto; }
+.feito h3 { margin: 0 0 6px; font: 600 26px/1.2 var(--display); font-variation-settings: "SOFT" 100; color: var(--tinta); }
+.feito p { margin: 0; color: var(--tinta-2); }
+
+/* Rodapé */
+.rodape { background: var(--faixa); color: var(--faixa-texto); text-align: center; padding-block: 46px 50px; }
+.rodape .assina { margin: 0; font: 600 30px/1.1 var(--display); font-variation-settings: "SOFT" 100; }
+.rodape p { margin: 10px 0 0; font-size: 13px; opacity: .85; }
+.rodape .quando { letter-spacing: .24em; text-transform: uppercase; font-size: 12px; opacity: 1; }
+
+/* Carrinho */
+.veu { position: fixed; inset: 0; z-index: 40; background: var(--veu); }
+.gaveta {
+  position: fixed; top: 0; right: 0; bottom: 0; z-index: 41; width: min(440px, 100%);
+  display: flex; flex-direction: column; background: var(--papel); color: var(--tinta);
+  box-shadow: -24px 0 48px -32px rgba(0, 0, 0, .5);
+  padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); padding-right: env(safe-area-inset-right, 0px);
+  animation: entra .22s ease-out;
+}
+@keyframes entra { from { transform: translateX(28px); opacity: 0; } }
+.gaveta-topo { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 16px 20px; border-bottom: 1px solid var(--linha); }
+.gaveta-topo h2 { margin: 0; font: 600 24px/1.2 var(--display); font-variation-settings: "SOFT" 100; }
+.fechar { width: 44px; height: 44px; display: grid; place-items: center; background: transparent; border: 1px solid var(--linha); color: var(--tinta); cursor: pointer; font-size: 22px; line-height: 1; }
+.passos { list-style: none; margin: 0; padding: 14px 20px 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; counter-reset: passo; }
+.passos li {
+  counter-increment: passo; padding: 8px 4px; border: 1px solid var(--oliva); text-align: center;
+  color: var(--tinta-2); font-size: 11.5px; letter-spacing: .04em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.passos li::before { content: counter(passo) ". "; }
+.passos li.ativo { background: var(--botao); border-color: var(--botao); color: var(--botao-texto); }
+.passos li.feito-passo { color: var(--oliva-texto); }
+.gaveta-corpo { flex: 1; overflow-y: auto; padding: 18px 20px 22px; display: flex; flex-direction: column; gap: 18px; }
+.etapa { display: flex; flex-direction: column; gap: 16px; }
+.itens { list-style: none; margin: 0; padding: 0; }
+.item {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "nome valor" "qtd remover";
+  gap: 10px 12px; padding: 14px 0; border-bottom: 1px solid var(--linha);
+}
+.item:first-child { padding-top: 0; }
+.item-nome { grid-area: nome; min-width: 0; }
+.item-nome strong { display: block; font-weight: 500; }
+.item-nome span { color: var(--tinta-2); font-size: 13px; font-variant-numeric: tabular-nums; }
+.item-valor { grid-area: valor; text-align: right; font-weight: 500; font-variant-numeric: tabular-nums; }
+.qtd-cotas { grid-area: qtd; display: inline-flex; align-items: center; width: max-content; border: 1px solid var(--linha); background: var(--pilula); }
+.qtd-cotas button { width: 38px; height: 38px; background: transparent; border: 0; color: var(--tinta); font-size: 18px; cursor: pointer; }
+.qtd-cotas button[disabled] { opacity: .35; cursor: not-allowed; }
+.qtd-cotas output { min-width: 30px; text-align: center; font-variant-numeric: tabular-nums; }
+.item .remover { grid-area: remover; justify-self: end; align-self: center; }
+.total { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.total strong { font: 600 24px/1 var(--texto); font-variant-numeric: tabular-nums; }
+.nota { margin: 0; color: var(--tinta-2); font-size: 13.5px; }
+.nota .ico { width: 16px; height: 16px; vertical-align: -3px; margin-right: 4px; color: var(--oliva-texto); }
+.botoes { display: flex; flex-direction: column; gap: 6px; }
+.botoes .btn { width: 100%; }
+.caixa-pagamento { display: flex; flex-direction: column; gap: 14px; padding: 20px; background: var(--papel-2); }
+.caixa-pagamento .rotulo { margin: 0; color: var(--oliva-texto); font: 600 11.5px/1 var(--texto); letter-spacing: .24em; text-transform: uppercase; }
+.caixa-pagamento p { margin: 0; }
+.erro { color: var(--erro); }
+
+/* Agradecimento */
+.modal {
+  position: fixed; inset: 0; z-index: 50; display: grid; place-items: center; background: var(--veu);
+  padding-block: 24px; padding-left: var(--lado-e); padding-right: var(--lado-d);
+}
+.modal-caixa { width: 100%; max-width: 420px; padding: 34px 26px 28px; background: var(--papel); text-align: center; display: flex; flex-direction: column; align-items: center; gap: 14px; animation: sobe .25s ease-out; }
+@keyframes sobe { from { transform: translateY(12px); opacity: 0; } }
+.modal-caixa h2 { margin: 0; font: 600 30px/1.12 var(--display); font-variation-settings: "SOFT" 100; color: var(--tinta); text-wrap: balance; }
+.modal-caixa p { margin: 0; color: var(--tinta-2); }
+.modal-caixa .ramo { width: 200px; }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-geladeira" viewBox="0 0 48 48"><rect x="14" y="4" width="20" height="39" rx="2.5"/><path d="M14 17h20M18 9v4M18 22v8M17 43v2M31 43v2"/></symbol>
+    <symbol id="i-fogao" viewBox="0 0 48 48"><rect x="8" y="10" width="32" height="33" rx="2"/><path d="M8 18h32M31 14h5M17 22h14"/><circle cx="14" cy="14" r="1.6"/><circle cx="20" cy="14" r="1.6"/><circle cx="26" cy="14" r="1.6"/><rect x="13" y="25" width="22" height="13" rx="1.5"/></symbol>
+    <symbol id="i-microondas" viewBox="0 0 48 48"><rect x="5" y="12" width="38" height="24" rx="2.5"/><rect x="9" y="16" width="22" height="16" rx="1.5"/><path d="M35 12v24M37.5 30.5h3M9 36v2M39 36v2"/><circle cx="39" cy="18.5" r="1.4"/><circle cx="39" cy="24" r="1.4"/></symbol>
+    <symbol id="i-airfryer" viewBox="0 0 48 48"><rect x="11" y="5" width="26" height="38" rx="9"/><circle cx="24" cy="13" r="3"/><rect x="15" y="22" width="18" height="15" rx="3"/><path d="M20.5 29.5h7"/></symbol>
+    <symbol id="i-liquidificador" viewBox="0 0 48 48"><path d="M14 6h20M15.5 6l2.5 24h12l2.5-24M16.3 13h4M16.9 19h3.5"/><rect x="14" y="30" width="20" height="13" rx="2"/><circle cx="24" cy="36.5" r="2.2"/></symbol>
+    <symbol id="i-cafeteira" viewBox="0 0 48 48"><path d="M10 6h27v8H18v22h19v7H10z"/><path d="M22 21h10l-.8 11a2.5 2.5 0 0 1-2.5 2.3h-3.4a2.5 2.5 0 0 1-2.5-2.3zM32 23.5h1.5a2.5 2.5 0 0 1 0 5H31.6M26 14v4"/></symbol>
+    <symbol id="i-purificador" viewBox="0 0 48 48"><rect x="14" y="5" width="20" height="30" rx="3"/><path d="M24 11.5c-2.8 3.6-4.2 5.8-4.2 7.6a4.2 4.2 0 0 0 8.4 0c0-1.8-1.4-4-4.2-7.6zM28 35v3.5h-3M15 43h18"/></symbol>
+    <symbol id="i-lavadora" viewBox="0 0 48 48"><rect x="9" y="4" width="30" height="40" rx="2.5"/><path d="M9 12h30M28 8h6M17.5 30c2.2-2.6 4.3-2.6 6.5 0s4.3 2.6 6.5 0"/><circle cx="14" cy="8" r="1.3"/><circle cx="24" cy="28" r="9.5"/></symbol>
+    <symbol id="i-aspirador" viewBox="0 0 48 48"><path d="M33 4l-10 32M30 6.5l6 2M12 36h16a3 3 0 0 1 3 3v3H9v-3a3 3 0 0 1 3-3z"/><rect x="24.5" y="16" width="6" height="11" rx="2" transform="rotate(17 27.5 21.5)"/></symbol>
+    <symbol id="i-ferro" viewBox="0 0 48 48"><path d="M5 35c1-8 6-14 14-14h12a9 9 0 0 1 9 9v5zM20 21v-4a3 3 0 0 1 3-3h11a3 3 0 0 1 3 3v6M12 30h2M18 30h2"/></symbol>
+    <symbol id="i-sofa" viewBox="0 0 48 48"><path d="M9 22v-6a3 3 0 0 1 3-3h24a3 3 0 0 1 3 3v6M5 24a3 3 0 0 1 6 0v5h26v-5a3 3 0 0 1 6 0v11H5zM11 29h26M9 35v4M39 35v4"/></symbol>
+    <symbol id="i-tv" viewBox="0 0 48 48"><rect x="4" y="8" width="40" height="25" rx="2"/><path d="M17 41h14M24 33v8"/></symbol>
+    <symbol id="i-rack" viewBox="0 0 48 48"><rect x="4" y="25" width="40" height="13" rx="1.5"/><path d="M17.5 25v13M30.5 25v13M7 38v3.5M41 38v3.5M10 31.5h3M35 31.5h3M36 25v-4a2 2 0 0 1 4 0v4M9 25v-6h6v6"/></symbol>
+    <symbol id="i-mesa" viewBox="0 0 48 48"><path d="M10 19h28M13 19v20M35 19v20M4 23v16M4 31h6v8M44 23v16M44 31h-6v8M22 19v-4a2 2 0 0 1 4 0v4"/></symbol>
+    <symbol id="i-cama" viewBox="0 0 48 48"><path d="M5 39V11M5 27h38v12M43 27v-4a4 4 0 0 0-4-4H21v8M5 33h38"/><rect x="9" y="20" width="9" height="7" rx="2"/></symbol>
+    <symbol id="i-guardaroupa" viewBox="0 0 48 48"><rect x="9" y="4" width="30" height="38" rx="1.5"/><path d="M24 4v38M21 19v7M27 19v7M12 42v3M36 42v3"/></symbol>
+    <symbol id="i-criado" viewBox="0 0 48 48"><rect x="12" y="22" width="24" height="18" rx="1.5"/><path d="M12 31h24M22 26.5h4M22 35.5h4M14.5 40v3.5M33.5 40v3.5M19 14h10l-2.5-8h-5zM24 14v8"/></symbol>
+    <symbol id="i-arcondicionado" viewBox="0 0 48 48"><rect x="4" y="11" width="40" height="15" rx="3.5"/><path d="M8 21h32M15 31c1.5 2 1.5 4 0 6M24 31c1.5 2 1.5 4 0 6M33 31c1.5 2 1.5 4 0 6"/><circle cx="38.5" cy="16" r="1"/></symbol>
+    <symbol id="i-presente" viewBox="0 0 48 48"><rect x="8" y="19" width="32" height="24" rx="1.5"/><rect x="6" y="13" width="36" height="6" rx="1"/><path d="M24 13v30M24 13c-2.5-6-10.5-6.5-10-1.5.3 2.2 4 2 10 1.5zM24 13c2.5-6 10.5-6.5 10-1.5-.3 2.2-4 2-10 1.5z"/></symbol>
+    <symbol id="i-sacola" viewBox="0 0 24 24"><path d="M5 8h14l-1 12.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 6 20.5zM9 10V7a3 3 0 0 1 6 0v3"/></symbol>
+    <symbol id="i-cartao" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18M7 15h4"/></symbol>
+    <symbol id="i-qr" viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><path d="M14 14h2v2h-2zM18 18h2v2h-2zM14 19.5h2M19.5 14v2"/></symbol>
+    <symbol id="i-cadeado" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
+    <symbol id="i-conversa" viewBox="0 0 24 24"><path d="M5 20l1.34-3.34A8 8 0 1 1 9.26 18.52z"/><path d="M9 10h6M9 13.5h4"/></symbol>
+  </defs>
+</svg>
+
+<a class="pular" href="#presentes">Pular para a lista de presentes</a>
+<div class="faixa-previa" id="faixa-previa" hidden>Prévia do site · pagamentos e confirmações desligados</div>
+
+<header class="topo">
+  <div class="miolo topo-in">
+    <a class="monograma" href="#inicio" aria-label="Bianca e Kevin, início">B <span>&amp;</span> K</a>
+    <nav class="menu" id="menu" aria-label="Seções do site">
+      <a href="#historia">Nossa história</a>
+      <a href="#cerimonia">Cerimônia</a>
+      <a href="#presentes">Presentes</a>
+      <a href="#recados">Recados</a>
+      <a href="#presenca">Confirmar presença</a>
+    </nav>
+    <button class="btn-menu" id="btn-menu" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+    <button class="btn-carrinho" id="btn-carrinho" type="button" aria-label="Abrir o carrinho de presentes">
+      <svg class="ico" aria-hidden="true"><use href="#i-sacola"/></svg>
+      <span class="qtd" id="carrinho-qtd" hidden>0</span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="inicio">
+    <span class="fita" aria-hidden="true">Noivos</span>
+    <div class="miolo hero-grade">
+      <div class="hero-titulo">
+        <p class="sobre">Vamos nos casar</p>
+        <h1 class="nomes"><span>Bianca</span> <span class="e">&amp;</span> <span>Kevin</span></h1>
+        <svg class="ramo" id="ramo" viewBox="0 0 400 76" aria-hidden="true"></svg>
+        <p class="data-pill" id="data-pill">Julho de 2027</p>
+      </div>
+      <div class="acoes">
+        <a class="btn" href="#presentes">Ver lista de presentes</a>
+        <a class="btn btn-linha" href="#presenca">Confirmar presença</a>
+      </div>
+      <figure class="hero-foto" id="hero-foto" hidden>
+        <img id="foto-capa" alt="" width="683" height="911" decoding="async">
+      </figure>
+    </div>
+  </section>
+
+  <section class="contagem" id="contagem" hidden>
+    <div class="miolo">
+      <p class="rotulo" id="contagem-rotulo">Faltam</p>
+      <div class="relogio" aria-live="off">
+        <div><b id="c-dias">0</b><span>dias</span></div>
+        <div><b id="c-horas">0</b><span>horas</span></div>
+        <div><b id="c-minutos">0</b><span>minutos</span></div>
+        <div><b id="c-segundos">0</b><span>segundos</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao" id="boas-vindas">
+    <div class="miolo">
+      <h2 class="titulo">Sejam bem-vindos ao nosso site!</h2>
+      <p class="subtitulo">Estamos contando os dias para celebrar com vocês</p>
+      <hr class="traco">
+      <div class="texto">
+        <p>Criamos este cantinho para dividir com vocês os preparativos do nosso casamento. Aqui fica a nossa lista de presentes e, conforme os detalhes forem fechados, vocês encontram também o local, o horário e a confirmação de presença.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao" id="historia">
+    <div class="miolo">
+      <h2 class="titulo">Nossa história</h2>
+      <p class="subtitulo">Como tudo começou</p>
+      <hr class="traco">
+      <div class="texto" id="historia-texto"></div>
+      <div class="galeria" id="galeria" hidden></div>
+    </div>
+  </section>
+
+  <section class="secao" id="cerimonia">
+    <div class="miolo">
+      <h2 class="titulo">Cerimônia e festa</h2>
+      <p class="subtitulo">Onde e quando</p>
+      <hr class="traco">
+      <div class="locais" id="locais"></div>
+    </div>
+  </section>
+
+  <section class="secao" id="presentes">
+    <div class="miolo">
+      <h2 class="titulo">Lista de presentes</h2>
+      <p class="subtitulo">Estamos montando o nosso primeiro lar</p>
+      <hr class="traco">
+      <div class="texto">
+        <p>Esta é a lista do que vamos comprar para o nosso apartamento, com o modelo e o preço de cada coisa. Os itens maiores foram divididos em cotas: elas somam o valor do produto e, quando todas forem dadas, o presente fica completo. O pagamento é no cartão de crédito, em até <span data-parcelas>12</span>x, ou no Pix.</p>
+      </div>
+      <ul class="selos">
+        <li><svg class="ico" aria-hidden="true"><use href="#i-cartao"/></svg><span>Cartão em até <span data-parcelas>12</span>x</span></li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-qr"/></svg><span>Pix</span></li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-cadeado"/></svg><span>Pagamento pelo Mercado Pago</span></li>
+      </ul>
+      <div class="filtros" id="filtros" aria-label="Filtrar presentes por cômodo"></div>
+      <div class="grade" id="grade" aria-live="polite"></div>
+      <p class="nota-precos" id="nota-precos" hidden></p>
+      <div class="livre" id="livre" hidden>
+        <div class="figura-mini" id="livre-figura"></div>
+        <div>
+          <h3>Prefere escolher o valor?</h3>
+          <p id="livre-faixa">Contribuição livre, do valor que você quiser.</p>
+        </div>
+        <form id="form-livre" novalidate>
+          <label class="campo-livre" for="valor-livre"><span>R$</span>
+            <input id="valor-livre" type="number" inputmode="decimal" min="20" max="5000" step="1" placeholder="Valor" aria-label="Valor da contribuição em reais">
+          </label>
+          <button class="btn" type="submit">Presentear</button>
+        </form>
+        <p class="status erro-livre" id="livre-status" role="status"></p>
+      </div>
+      <div class="compartilhar">
+        <p>Conhece alguém que também quer presentear?</p>
+        <a class="btn btn-linha" id="btn-compartilhar" href="https://wa.me/" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-conversa"/></svg>Compartilhar no WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao" id="recados">
+    <div class="miolo">
+      <h2 class="titulo">Mural de recados</h2>
+      <p class="subtitulo">O carinho de quem presenteou</p>
+      <hr class="traco">
+      <div class="mural" id="mural"></div>
+    </div>
+  </section>
+
+  <section class="secao" id="presenca">
+    <div class="miolo">
+      <h2 class="titulo">Confirmar presença</h2>
+      <p class="subtitulo">Contem pra gente se vocês vão</p>
+      <hr class="traco">
+      <p class="texto" id="rsvp-fechado" hidden>A confirmação de presença abre junto com os convites.</p>
+      <form class="form" id="form-rsvp" novalidate>
+        <div class="campo">
+          <label for="rsvp-nome">Nome completo</label>
+          <input id="rsvp-nome" name="nome" type="text" autocomplete="name" maxlength="120" required>
+        </div>
+        <fieldset class="campo">
+          <legend>Você vai?</legend>
+          <div class="opcoes">
+            <label class="opcao" for="rsvp-sim"><input id="rsvp-sim" type="radio" name="vai" value="sim" checked> Sim, estarei lá</label>
+            <label class="opcao" for="rsvp-nao"><input id="rsvp-nao" type="radio" name="vai" value="nao"> Infelizmente não vou poder ir</label>
+          </div>
+        </fieldset>
+        <div class="duas" id="rsvp-pessoas">
+          <div class="campo">
+            <label for="rsvp-adultos">Adultos <span>(com você)</span></label>
+            <input id="rsvp-adultos" name="adultos" type="number" inputmode="numeric" min="1" max="20" value="1">
+          </div>
+          <div class="campo">
+            <label for="rsvp-criancas">Crianças</label>
+            <input id="rsvp-criancas" name="criancas" type="number" inputmode="numeric" min="0" max="20" value="0">
+          </div>
+        </div>
+        <div class="campo" id="rsvp-musica-campo">
+          <label for="rsvp-musica">Uma música que não pode faltar na festa <span>(opcional)</span></label>
+          <input id="rsvp-musica" name="musica" type="text" maxlength="120">
+        </div>
+        <div class="campo">
+          <label for="rsvp-tel">WhatsApp <span>(opcional)</span></label>
+          <input id="rsvp-tel" name="telefone" type="tel" autocomplete="tel" inputmode="tel" maxlength="30">
+        </div>
+        <div class="campo">
+          <label for="rsvp-msg">Recado para os noivos <span>(opcional)</span></label>
+          <textarea id="rsvp-msg" name="mensagem" rows="3" maxlength="500"></textarea>
+        </div>
+        <input class="mel" id="rsvp-site" name="site" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn" type="submit">Enviar confirmação</button>
+        <p class="status" id="rsvp-status" role="status"></p>
+      </form>
+      <div class="feito" id="rsvp-feito" hidden>
+        <h3 id="rsvp-feito-titulo">Obrigado!</h3>
+        <p id="rsvp-feito-texto"></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape">
+  <div class="miolo">
+    <p class="assina">Bianca &amp; Kevin</p>
+    <p class="quando" id="rodape-data">Julho de 2027</p>
+    <p>Os pagamentos dos presentes são feitos no Mercado Pago.</p>
+  </div>
+</footer>
+
+<div class="veu" id="veu" hidden></div>
+<aside class="gaveta" id="gaveta" role="dialog" aria-modal="true" aria-labelledby="gaveta-titulo" hidden>
+  <div class="gaveta-topo">
+    <h2 id="gaveta-titulo">Seu carrinho</h2>
+    <button class="fechar" type="button" data-fechar aria-label="Fechar o carrinho">&times;</button>
+  </div>
+  <ol class="passos" id="passos">
+    <li>Carrinho</li>
+    <li>Seus dados</li>
+    <li>Pagamento</li>
+  </ol>
+  <div class="gaveta-corpo">
+    <div class="etapa" id="etapa-1">
+      <ul class="itens" id="lista-carrinho"></ul>
+      <p class="vazio" id="carrinho-vazio" hidden>Seu carrinho está vazio. Escolha um presente na lista.</p>
+      <div class="total" id="linha-total"><span>Total</span><strong id="total-carrinho">R$ 0</strong></div>
+      <p class="nota"><svg class="ico" aria-hidden="true"><use href="#i-cartao"/></svg>No cartão de crédito dá para parcelar em até <span data-parcelas>12</span>x. Também aceitamos Pix.</p>
+      <div class="botoes">
+        <button class="btn" type="button" id="btn-continuar">Continuar</button>
+        <button class="link-botao" type="button" data-fechar>Escolher mais presentes</button>
+      </div>
+    </div>
+
+    <form class="etapa" id="etapa-2" novalidate hidden>
+      <div class="campo">
+        <label for="dados-nome">Seu nome</label>
+        <input id="dados-nome" name="nome" type="text" autocomplete="name" maxlength="80" required>
+      </div>
+      <div class="campo">
+        <label for="dados-msg">Recado para os noivos <span>(opcional)</span></label>
+        <textarea id="dados-msg" name="mensagem" rows="4" maxlength="500"></textarea>
+        <span class="contador" id="dados-contador">0/500</span>
+      </div>
+      <label class="marcar" for="dados-mural"><input id="dados-mural" type="checkbox" checked> Mostrar meu recado no mural do site</label>
+      <label class="marcar" for="dados-taxa" id="linha-taxa" hidden><input id="dados-taxa" type="checkbox"> <span id="dados-taxa-texto">Vou pagar no cartão e quero cobrir a taxa</span></label>
+      <div class="total"><span>Total</span><strong id="total-dados">R$ 0</strong></div>
+      <p class="status" id="dados-status" role="status"></p>
+      <div class="botoes">
+        <button class="btn" type="submit">Ir para o pagamento</button>
+        <button class="link-botao" type="button" data-etapa="1">Voltar ao carrinho</button>
+      </div>
+    </form>
+
+    <div class="etapa" id="etapa-3" hidden>
+      <div class="caixa-pagamento" id="caixa-pagamento"></div>
+      <div class="botoes">
+        <button class="link-botao" type="button" data-etapa="2">Voltar</button>
+      </div>
+    </div>
+  </div>
+</aside>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-titulo" hidden>
+  <div class="modal-caixa">
+    <svg class="ramo" id="ramo-modal" viewBox="0 0 400 76" aria-hidden="true"></svg>
+    <h2 id="modal-titulo">Muito obrigado!</h2>
+    <p id="modal-texto"></p>
+    <button class="btn" type="button" id="modal-ok">Voltar ao site</button>
+  </div>
+</div>
+
+<noscript><p style="text-align:center;padding:16px">Para ver a lista de presentes, ative o JavaScript do navegador.</p></noscript>
+
+<script>
+(() => {
+"use strict";
+
+/* ===== Configuração: é aqui que se edita o site ===== */
+const CONFIG = {
+  // Endereço da função no Supabase. Vazio = prévia (nada é cobrado nem enviado).
+  // Ex.: "https://abcdefgh.supabase.co/functions/v1/casamento"
+  api: "",
+  // Data e hora da cerimônia, quando estiverem fechadas. Ex.: "2027-07-17T16:00:00-03:00"
+  data: "",
+  mesAno: "Julho de 2027",
+  // Foto de capa e fotos da seção "Nossa história" (arquivos na pasta fotos/).
+  fotoCapa: "fotos/capa.webp",
+  fotoCapaAlt: "Bianca e Kevin à beira de um lago",
+  fotos: [
+    { src: "fotos/historia-1.webp", alt: "Bianca e Kevin na grama" },
+    { src: "fotos/historia-2.webp", alt: "Bianca e Kevin numa ponte de madeira na mata" },
+  ],
+  // Um texto por parágrafo.
+  historia: [],
+  // Endereço público do site, usado no botão de compartilhar. Vazio = o endereço da própria página.
+  siteUrl: "",
+  cerimonia: { local: "", endereco: "", horario: "", mapa: "" },
+  festa: { local: "", endereco: "", horario: "", mapa: "" },
+  rsvpAberto: true,
+};
+/* ==================================================== */
+
+const PREVIA = !CONFIG.api;
+const $ = (s, el = document) => el.querySelector(s);
+const $$ = (s, el = document) => [...el.querySelectorAll(s)];
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const brl = (v) => Number(v).toLocaleString("pt-BR", { style: "currency", currency: "BRL", minimumFractionDigits: Number.isInteger(Number(v)) ? 0 : 2, maximumFractionDigits: 2 });
+const primeiroNome = (n) => String(n || "").trim().split(/\s+/)[0] || "";
+const guardar = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { /* sem armazenamento */ } };
+const ler = (k, padrao) => { try { const v = JSON.parse(localStorage.getItem(k)); return v == null ? padrao : v; } catch (e) { return padrao; } };
+
+let catalogo = { parcelasMax: 12, valorLivre: { min: 20, max: 5000 }, categorias: [], presentes: [] };
+let vendidas = {};
+let recados = [];
+let filtro = "todos";
+let etapaAtual = 1;
+let focoAntes = null;
+let carrinho = ler("casamento-carrinho", null);
+if (!carrinho || typeof carrinho.itens !== "object" || carrinho.itens === null) carrinho = { itens: {}, livre: 0 };
+
+const salvarCarrinho = () => guardar("casamento-carrinho", carrinho);
+const presente = (id) => catalogo.presentes.find((p) => p.id === id);
+const restante = (p) => (p.meta ? Math.max(0, p.meta - (vendidas[p.id] || 0)) : Infinity);
+const limiteCotas = (p) => Math.min(50, restante(p));
+const taxaPct = () => Number(catalogo.taxaOpcional) || 0;
+
+/* ----- Ilustrações dos presentes (desenhadas em código, sem arquivo de imagem) ----- */
+const S = (corpo) => `<svg class="il" viewBox="0 0 200 200" aria-hidden="true">${corpo}</svg>`;
+const ILUSTRA = {
+  geladeira: S(`<ellipse class="il-ch" cx="100" cy="172" rx="46" ry="5"/><rect class="il-s" x="60" y="20" width="80" height="150" rx="9"/><rect class="il-c" x="60" y="20" width="70" height="150" rx="9"/><rect class="il-s" x="60" y="72" width="80" height="3"/><rect class="il-me" x="68" y="36" width="5" height="26" rx="2.5"/><rect class="il-me" x="68" y="86" width="5" height="44" rx="2.5"/><rect class="il-e" x="94" y="86" width="26" height="17" rx="3"/><circle class="il-a" cx="101" cy="94.5" r="2.2"/><rect class="il-e2" x="107" y="92" width="9" height="5" rx="1.5"/><rect class="il-e" x="66" y="168" width="10" height="4" rx="1"/><rect class="il-e" x="124" y="168" width="10" height="4" rx="1"/>`),
+  fogao: S(`<ellipse class="il-ch" cx="100" cy="172" rx="58" ry="5"/><rect class="il-e2" x="56" y="44" width="22" height="7" rx="3"/><rect class="il-e2" x="89" y="44" width="22" height="7" rx="3"/><rect class="il-e2" x="122" y="44" width="22" height="7" rx="3"/><rect class="il-e" x="44" y="50" width="112" height="11" rx="3"/><rect class="il-s" x="48" y="60" width="104" height="110" rx="5"/><rect class="il-c" x="48" y="60" width="96" height="110" rx="5"/><rect class="il-s" x="48" y="60" width="104" height="18"/><circle class="il-l" cx="62" cy="69" r="4.5"/><circle class="il-l" cx="77" cy="69" r="4.5"/><circle class="il-l" cx="92" cy="69" r="4.5"/><circle class="il-l" cx="107" cy="69" r="4.5"/><rect class="il-e" x="122" y="64.5" width="22" height="9" rx="2"/><rect class="il-me" x="58" y="84" width="84" height="5" rx="2.5"/><rect class="il-e" x="58" y="94" width="84" height="54" rx="4"/><path class="il-e2" d="M66 100h20l-14 42h-8z" opacity=".55"/><rect class="il-s" x="58" y="154" width="84" height="10" rx="3"/>`),
+  microondas: S(`<ellipse class="il-ch" cx="100" cy="158" rx="66" ry="5"/><rect class="il-s" x="32" y="62" width="136" height="92" rx="9"/><rect class="il-c" x="32" y="62" width="128" height="92" rx="9"/><rect class="il-e" x="42" y="72" width="84" height="72" rx="6"/><path class="il-e2" d="M52 80h20l-18 56h-8z" opacity=".55"/><rect class="il-s" x="132" y="72" width="22" height="72" rx="4"/><rect class="il-e" x="136" y="77" width="14" height="9" rx="2"/><circle class="il-a" cx="143" cy="98" r="3"/><circle class="il-l" cx="143" cy="110" r="3"/><circle class="il-l" cx="143" cy="122" r="3"/><rect class="il-l" x="137" y="131" width="12" height="6" rx="3"/><rect class="il-e" x="40" y="154" width="12" height="4" rx="1"/><rect class="il-e" x="148" y="154" width="12" height="4" rx="1"/>`),
+  airfryer: S(`<ellipse class="il-ch" cx="100" cy="172" rx="44" ry="5"/><path class="il-e" d="M64 158V68c0-21 16-36 36-36s36 15 36 36v90a12 12 0 0 1-12 12H76a12 12 0 0 1-12-12z"/><path class="ils-c" d="M76 66c1-12 9-21 20-23" fill="none" stroke-width="3.5" stroke-linecap="round" opacity=".25"/><circle class="il-e2" cx="100" cy="74" r="15"/><circle class="ils-a" cx="100" cy="74" r="15" fill="none" stroke-width="2.5"/><rect class="il-a" x="92" y="72" width="16" height="4" rx="2"/><rect class="il-e2" x="72" y="104" width="56" height="56" rx="10"/><rect class="il-me" x="86" y="125" width="28" height="11" rx="5.5"/>`),
+  liquidificador: S(`<ellipse class="il-ch" cx="100" cy="172" rx="40" ry="5"/><path class="ils-e" d="M126 56h8a7 7 0 0 1 7 7v36a7 7 0 0 1-7 7h-12" fill="none" stroke-width="6" stroke-linecap="round"/><path class="il-v" d="M72 44h56l-8 78H80z"/><path class="il-a" d="M76.7 90h46.6l-3.3 32H80z" opacity=".9"/><path class="ils-c" d="M81 52l-2.4 30" fill="none" stroke-width="3" stroke-linecap="round" opacity=".9"/><rect class="il-e" x="68" y="34" width="64" height="12" rx="5"/><rect class="il-e" x="93" y="27" width="14" height="9" rx="2.5"/><path class="il-c" d="M76 122h48l8 48H68z"/><path class="il-s" d="M116 122h8l8 48h-10z"/><circle class="il-l" cx="98" cy="148" r="8"/><circle class="il-c" cx="98" cy="148" r="3"/>`),
+  cafeteira: S(`<ellipse class="il-ch" cx="100" cy="172" rx="48" ry="5"/><rect class="il-e" x="56" y="30" width="92" height="30" rx="8"/><rect class="il-e" x="56" y="30" width="30" height="140" rx="8"/><rect class="il-e" x="56" y="148" width="92" height="22" rx="6"/><rect class="il-e2" x="62" y="37" width="80" height="5" rx="2.5" opacity=".7"/><rect class="il-e2" x="110" y="60" width="16" height="8" rx="2"/><circle class="il-a" cx="71" cy="124" r="5"/><path class="ils-e" d="M140 100h4a7 7 0 0 1 7 7v16a7 7 0 0 1-7 7h-5" fill="none" stroke-width="5"/><path class="il-v" d="M96 92h44l-3 46a8 8 0 0 1-8 7h-22a8 8 0 0 1-8-7z"/><path class="il-cf" d="M98 116h40l-1.6 22a6 6 0 0 1-6 5.5h-24.8a6 6 0 0 1-6-5.5z"/><rect class="il-e2" x="94" y="86" width="48" height="8" rx="3"/>`),
+  purificador: S(`<ellipse class="il-ch" cx="100" cy="172" rx="40" ry="5"/><rect class="il-s" x="64" y="26" width="72" height="144" rx="14"/><rect class="il-c" x="64" y="26" width="64" height="144" rx="14"/><rect class="il-s" x="74" y="40" width="44" height="36" rx="7"/><path class="il-a" d="M96 47c-6 8-9 12-9 16a9 9 0 0 0 18 0c0-4-3-8-9-16z"/><rect class="il-e" x="76" y="96" width="40" height="52" rx="7"/><rect class="il-me" x="92" y="96" width="8" height="11" rx="2"/><path class="il-v" d="M86 122h20l-2 22h-16z"/><path class="il-agua" d="M86.8 131h18.4l-1.2 13h-16z"/>`),
+  lavadora: S(`<ellipse class="il-ch" cx="100" cy="172" rx="52" ry="5"/><rect class="il-s" x="50" y="26" width="100" height="144" rx="9"/><rect class="il-c" x="50" y="26" width="92" height="144" rx="9"/><rect class="il-s" x="50" y="50" width="100" height="3"/><rect class="il-s" x="58" y="34" width="28" height="10" rx="2"/><rect class="il-e" x="94" y="34" width="22" height="10" rx="2"/><circle class="il-l" cx="130" cy="39" r="6"/><circle class="il-me" cx="96" cy="110" r="38"/><circle class="il-e" cx="96" cy="110" r="29"/><path class="il-agua" d="M67.6 116c5-5 9.5-5 14.2 0s9.5 5 14.2 0 9.5-5 14.2 0 9.5 5 14.2 0A29 29 0 0 1 67.6 116z"/><path class="ils-c" d="M80 92a24 24 0 0 1 14-8" fill="none" stroke-width="4" stroke-linecap="round" opacity=".55"/>`),
+  aspirador: S(`<ellipse class="il-ch" cx="96" cy="172" rx="44" ry="5"/><path class="ils-e" d="M134 30L102 150" fill="none" stroke-width="6" stroke-linecap="round"/><rect class="il-e" x="124" y="20" width="22" height="16" rx="8" transform="rotate(15 135 28)"/><g transform="rotate(15 120 84)"><rect class="il-c" x="107" y="58" width="26" height="52" rx="10"/><rect class="il-v" x="111" y="78" width="18" height="27" rx="6"/><rect class="il-a" x="111" y="63" width="18" height="10" rx="4"/></g><path class="il-e" d="M66 150h52a10 10 0 0 1 10 10v6H56v-6a10 10 0 0 1 10-10z"/><rect class="il-a" x="62" y="163" width="60" height="3" rx="1.5"/>`),
+  ferro: S(`<ellipse class="il-ch" cx="102" cy="152" rx="62" ry="5"/><path class="ils-e" d="M164 126c14 0 18 10 16 22" fill="none" stroke-width="3" stroke-linecap="round"/><path class="ils-a" d="M84 94c0-18 10-28 28-28h26a14 14 0 0 1 14 14v14" fill="none" stroke-width="10" stroke-linecap="round"/><path class="il-c" d="M40 138c4-26 24-44 50-44h52a22 22 0 0 1 22 22v22z"/><path class="il-s" d="M142 94a22 22 0 0 1 22 22v22h-9v-22a20 20 0 0 0-17-20z"/><path class="il-me" d="M38 138h128v6a4 4 0 0 1-4 4H42a4 4 0 0 1-4-4z"/><path class="il-v" d="M62 128c3-12 12-20 24-22h14v22z"/><circle class="il-l" cx="124" cy="117" r="7"/><circle class="il-c" cx="124" cy="117" r="2.5"/>`),
+  sofa: S(`<ellipse class="il-ch" cx="100" cy="166" rx="80" ry="5"/><rect class="il-t2" x="34" y="62" width="132" height="56" rx="14"/><rect class="il-t" x="38" y="66" width="60" height="44" rx="11"/><rect class="il-t" x="102" y="66" width="60" height="44" rx="11"/><rect class="il-t2" x="30" y="118" width="140" height="30" rx="8"/><rect class="il-t" x="40" y="106" width="59" height="22" rx="8"/><rect class="il-t" x="101" y="106" width="59" height="22" rx="8"/><rect class="il-t2" x="18" y="92" width="26" height="58" rx="11"/><rect class="il-t2" x="156" y="92" width="26" height="58" rx="11"/><rect class="il-a2" x="126" y="80" width="26" height="26" rx="6" transform="rotate(-10 139 93)"/><path class="il-m2" d="M36 150h10l-2 14h-6zM154 150h10l-2 14h-6z"/>`),
+  tv: S(`<ellipse class="il-ch" cx="100" cy="164" rx="48" ry="4"/><rect class="il-e" x="20" y="40" width="160" height="96" rx="5"/><rect class="il-e2" x="25" y="45" width="150" height="86" rx="2"/><circle class="il-a2" cx="142" cy="72" r="10"/><path class="il-a" d="M25 112c24-14 46-18 68-8s40 8 82-6v33H25z"/><path class="il-t" d="M25 120c30-10 60-8 90 2s44 6 60 0v9H25z"/><path class="il-me" d="M92 136h16l4 20H88z"/><rect class="il-e" x="68" y="155" width="64" height="6" rx="3"/>`),
+  rack: S(`<ellipse class="il-ch" cx="100" cy="164" rx="82" ry="4"/><rect class="il-l" x="34" y="90" width="38" height="6" rx="1"/><rect class="il-t" x="36" y="96" width="34" height="6" rx="1"/><rect class="il-a2" x="38" y="102" width="30" height="6" rx="1"/><path class="il-a" d="M152 90c-10-4-14-14-10-24 6 4 9 12 10 24zm0 0c8-6 16-6 20-2-6 6-12 6-20 2zm0 0c-2-10 2-18 8-22 2 8 0 16-8 22z"/><rect class="il-c" x="142" y="88" width="20" height="20" rx="4"/><rect class="il-m" x="18" y="108" width="164" height="46" rx="4"/><rect class="il-m2" x="18" y="108" width="164" height="6" rx="2"/><rect class="il-m2" x="26" y="120" width="46" height="28" rx="2"/><rect class="il-e2" x="78" y="120" width="44" height="28" rx="2"/><rect class="il-e" x="86" y="134" width="28" height="8" rx="2"/><circle class="il-a" cx="110" cy="138" r="1.5"/><rect class="il-m2" x="128" y="120" width="46" height="28" rx="2"/><rect class="il-me" x="66" y="130" width="3" height="9" rx="1.5"/><rect class="il-me" x="131" y="130" width="3" height="9" rx="1.5"/><path class="ils-e" d="M30 154l-3 12M170 154l3 12" fill="none" stroke-width="3" stroke-linecap="round"/>`),
+  mesa: S(`<ellipse class="il-ch" cx="100" cy="168" rx="82" ry="5"/><rect class="il-m2" x="16" y="62" width="7" height="104" rx="3"/><rect class="il-t" x="16" y="112" width="40" height="9" rx="3"/><rect class="il-m2" x="49" y="121" width="6" height="45" rx="2"/><rect class="il-m2" x="177" y="62" width="7" height="104" rx="3"/><rect class="il-t" x="144" y="112" width="40" height="9" rx="3"/><rect class="il-m2" x="145" y="121" width="6" height="45" rx="2"/><rect class="il-m" x="40" y="94" width="120" height="9" rx="3"/><rect class="il-m2" x="52" y="103" width="7" height="63" rx="2"/><rect class="il-m2" x="141" y="103" width="7" height="63" rx="2"/><path class="ils-l" d="M100 76V60M95 76l-2-9M105 76l2-10" fill="none" stroke-width="2"/><circle class="il-a" cx="93" cy="64" r="6"/><circle class="il-a2" cx="107" cy="63" r="6"/><circle class="il-t" cx="100" cy="55" r="6"/><path class="il-c" d="M93 94c-3-6-2-14 2-18h10c4 4 5 12 2 18z"/>`),
+  cama: S(`<ellipse class="il-ch" cx="100" cy="166" rx="84" ry="5"/><rect class="il-t2" x="24" y="50" width="152" height="74" rx="10"/><path class="ils-c" d="M62 58v40M100 58v40M138 58v40" fill="none" stroke-width="2" opacity=".35"/><rect class="il-s" x="18" y="106" width="164" height="30" rx="9"/><rect class="il-c" x="40" y="88" width="52" height="22" rx="10"/><rect class="il-c" x="108" y="88" width="52" height="22" rx="10"/><rect class="il-t2" x="22" y="136" width="156" height="20" rx="4"/><path class="il-t" d="M18 116h164v14a9 9 0 0 1-9 9H27a9 9 0 0 1-9-9z"/><rect class="il-a2" x="18" y="116" width="164" height="6"/><path class="il-m2" d="M30 156h10v10H30zM160 156h10v10h-10z"/>`),
+  guardaroupa: S(`<ellipse class="il-ch" cx="100" cy="172" rx="66" ry="5"/><rect class="il-m" x="40" y="26" width="120" height="136" rx="2"/><rect class="il-m2" x="36" y="18" width="128" height="10" rx="3"/><path class="ils-m2" d="M80 30v128M120 30v128" fill="none" stroke-width="2"/><rect class="il-v" x="86" y="36" width="28" height="116" rx="2"/><path class="ils-c" d="M92 50l14-10M92 64l18-14" fill="none" stroke-width="2.5" stroke-linecap="round" opacity=".8"/><rect class="il-me" x="73" y="84" width="3" height="18" rx="1.5"/><rect class="il-me" x="124" y="84" width="3" height="18" rx="1.5"/><rect class="il-m2" x="40" y="160" width="120" height="8" rx="2"/>`),
+  criado: S(`<ellipse class="il-ch" cx="100" cy="170" rx="80" ry="5"/><rect class="il-m" x="22" y="106" width="62" height="58" rx="4"/><rect class="il-m2" x="22" y="106" width="62" height="5" rx="2"/><path class="ils-m2" d="M28 136h50" fill="none" stroke-width="2"/><rect class="il-me" x="47" y="121" width="12" height="3" rx="1.5"/><rect class="il-me" x="47" y="148" width="12" height="3" rx="1.5"/><rect class="il-e" x="51" y="92" width="4" height="10"/><path class="il-a2" d="M38 72h30l6 22H32z"/><rect class="il-c" x="44" y="100" width="18" height="6" rx="3"/><rect class="il-m" x="116" y="106" width="62" height="58" rx="4"/><rect class="il-m2" x="116" y="106" width="62" height="5" rx="2"/><path class="ils-m2" d="M122 136h50" fill="none" stroke-width="2"/><rect class="il-me" x="141" y="121" width="12" height="3" rx="1.5"/><rect class="il-me" x="141" y="148" width="12" height="3" rx="1.5"/><rect class="il-m2" x="141" y="102" width="12" height="4" rx="1"/><circle class="il-c" cx="147" cy="90" r="12"/><circle class="ils-l" cx="147" cy="90" r="12" fill="none" stroke-width="2"/><path class="ils-l" d="M147 84v6l4 3" fill="none" stroke-width="2" stroke-linecap="round"/>`),
+  arcondicionado: S(`<rect class="il-c" x="22" y="56" width="156" height="52" rx="14"/><path class="il-s" d="M22 92h156v2a14 14 0 0 1-14 14H36a14 14 0 0 1-14-14z"/><rect class="il-l" x="34" y="98" width="132" height="4" rx="2"/><circle class="il-a" cx="160" cy="70" r="3"/><rect class="il-s" x="30" y="64" width="44" height="4" rx="2"/><path class="ils-a" d="M60 120c-6 8 6 14 0 22M100 120c-6 8 6 14 0 22M140 120c-6 8 6 14 0 22" fill="none" stroke-width="3" stroke-linecap="round" opacity=".85"/>`),
+  presente: S(`<ellipse class="il-ch" cx="100" cy="170" rx="56" ry="5"/><rect class="il-c" x="52" y="88" width="96" height="80" rx="4"/><rect class="il-s" x="134" y="88" width="14" height="80"/><rect class="il-s" x="46" y="72" width="108" height="20" rx="4"/><rect class="il-a" x="92" y="72" width="16" height="96"/><path class="il-a" d="M100 72c-8-18-30-24-34-12-3 9 14 13 34 12zm0 0c8-18 30-24 34-12 3 9-14 13-34 12z"/><circle class="il-l" cx="100" cy="71" r="5"/>`),
+};
+
+function itensCarrinho() {
+  return Object.entries(carrinho.itens)
+    .map(([id, qtd]) => ({ p: presente(id), qtd: Number(qtd) }))
+    .filter((i) => i.p && i.qtd > 0);
+}
+// Quem completa o presente paga o que falta, então a soma das cotas fecha no preço exato (o servidor faz igual).
+const valorLinha = (p, qtd) => (p.preco && qtd >= restante(p)
+  ? Math.round((p.preco - (p.meta - restante(p)) * p.cota) * 100) / 100
+  : Math.round(qtd * p.cota * 100) / 100);
+const totalCarrinho = () => Math.round((itensCarrinho().reduce((s, i) => s + valorLinha(i.p, i.qtd), 0) + (Number(carrinho.livre) || 0)) * 100) / 100;
+const contagemCarrinho = () => itensCarrinho().reduce((s, i) => s + i.qtd, 0) + (carrinho.livre ? 1 : 0);
+// Taxa opcional: o convidado que paga no cartão pode somar a taxa do Mercado Pago (o servidor recalcula igual).
+const valorTaxa = () => Math.round(totalCarrinho() * taxaPct()) / 100;
+const cobrirTaxa = () => taxaPct() > 0 && $("#dados-taxa").checked;
+const totalAPagar = () => totalCarrinho() + (cobrirTaxa() ? valorTaxa() : 0);
+
+/* ----- Ramo de oliveira (desenhado por código) ----- */
+function desenharRamo(svg) {
+  if (!svg) return;
+  const cx = 200;
+  const lado = (s) => {
+    const P0 = [cx + s * 6, 50], P1 = [cx + s * 100, 60], P2 = [cx + s * 186, 20];
+    const B = (t) => [0, 1].map((k) => (1 - t) ** 2 * P0[k] + 2 * (1 - t) * t * P1[k] + t * t * P2[k]);
+    const D = (t) => [0, 1].map((k) => 2 * (1 - t) * (P1[k] - P0[k]) + 2 * t * (P2[k] - P1[k]));
+    const graus = (v) => Math.atan2(v[1], v[0]) * 180 / Math.PI;
+    let g = `<path d="M${P0} Q${P1} ${P2}" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>`;
+    const n = 9;
+    for (let i = 0; i < n; i++) {
+      const t = 0.1 + i * (0.86 / (n - 1));
+      const [x, y] = B(t);
+      const lado2 = (i % 2 ? 1 : -1) * s;
+      const L = 21 - i * 1.1, W = L * 0.3;
+      const ang = graus(D(t)) + lado2 * 38;
+      g += `<path d="M0 0C${(L * .3).toFixed(1)} ${(-W).toFixed(1)} ${(L * .72).toFixed(1)} ${(-W).toFixed(1)} ${L.toFixed(1)} 0C${(L * .72).toFixed(1)} ${W.toFixed(1)} ${(L * .3).toFixed(1)} ${W.toFixed(1)} 0 0Z" transform="translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${ang.toFixed(1)})" fill="currentColor" fill-opacity="${(0.95 - i * 0.035).toFixed(2)}"/>`;
+    }
+    const [tx, ty] = B(1);
+    g += `<path d="M0 0C4 -3.6 10 -3.6 14 0C10 3.6 4 3.6 0 0Z" transform="translate(${tx.toFixed(1)} ${ty.toFixed(1)}) rotate(${graus(D(1)).toFixed(1)})" fill="currentColor"/>`;
+    return g;
+  };
+  const azeitonas = `<ellipse cx="${cx - 5}" cy="52" rx="3.3" ry="4.4" transform="rotate(-20 ${cx - 5} 52)" fill="currentColor"/>`
+    + `<ellipse cx="${cx + 4.5}" cy="54" rx="3.3" ry="4.4" transform="rotate(16 ${cx + 4.5} 54)" fill="currentColor" fill-opacity=".7"/>`;
+  svg.innerHTML = lado(1) + lado(-1) + azeitonas;
+  try {
+    const bb = svg.getBBox();
+    if (bb.width) svg.setAttribute("viewBox", `${(bb.x - 2).toFixed(1)} ${(bb.y - 2).toFixed(1)} ${(bb.width + 4).toFixed(1)} ${(bb.height + 4).toFixed(1)}`);
+  } catch (e) { /* mantém o viewBox padrão */ }
+}
+
+/* ----- Conteúdo que vem da configuração ----- */
+function dataBonita() {
+  const d = CONFIG.data ? new Date(CONFIG.data) : null;
+  if (d && !isNaN(d)) return d.toLocaleDateString("pt-BR", { day: "2-digit", month: "2-digit", year: "numeric" }).replaceAll("/", ".");
+  return CONFIG.mesAno;
+}
+
+function desenharHistoria() {
+  const el = $("#historia-texto");
+  const fotos = CONFIG.fotos || [];
+  if (fotos.length) {
+    $("#galeria").innerHTML = fotos
+      .map((f) => `<figure class="foto"><img src="${esc(f.src)}" alt="${esc(f.alt)}" loading="lazy" decoding="async"></figure>`)
+      .join("");
+    $("#galeria").hidden = false;
+  }
+  if (CONFIG.historia.length) {
+    el.innerHTML = CONFIG.historia.map((p) => `<p>${esc(p)}</p>`).join("");
+  } else if (PREVIA) {
+    el.innerHTML = `<p class="a-preencher">A preencher: a história de vocês, em dois ou três parágrafos. No site publicado, sem texto ficam só as fotos.</p>`;
+  } else if (fotos.length) {
+    el.hidden = true;
+  } else {
+    $("#historia").hidden = true;
+    const link = $('.menu a[href="#historia"]');
+    if (link) link.hidden = true;
+  }
+}
+
+function desenharLocais() {
+  const bloco = (rotulo, l) => {
+    const tem = l && (l.local || l.endereco);
+    if (!tem) return `<article class="local"><p class="rotulo">${rotulo}</p><h3>Em breve</h3><p>Assim que fecharmos o local e o horário, eles aparecem aqui.</p></article>`;
+    return `<article class="local"><p class="rotulo">${rotulo}</p><h3>${esc(l.local)}</h3>`
+      + (l.endereco ? `<p>${esc(l.endereco)}</p>` : "")
+      + (l.horario ? `<p class="hora">${esc(l.horario)}</p>` : "")
+      + (l.mapa ? `<a href="${esc(l.mapa)}" target="_blank" rel="noopener">Como chegar</a>` : "")
+      + `</article>`;
+  };
+  $("#locais").innerHTML = bloco("Cerimônia", CONFIG.cerimonia) + bloco("Festa", CONFIG.festa);
+}
+
+function iniciarContagem() {
+  const alvo = CONFIG.data ? new Date(CONFIG.data) : null;
+  if (!alvo || isNaN(alvo)) return;
+  $("#contagem").hidden = false;
+  const pares = [["#c-dias", 86400], ["#c-horas", 3600], ["#c-minutos", 60], ["#c-segundos", 1]];
+  const tick = () => {
+    const diff = alvo - Date.now();
+    $("#contagem-rotulo").textContent = diff >= 0 ? "Faltam" : "Já se passaram";
+    let s = Math.floor(Math.abs(diff) / 1000);
+    for (const [sel, base] of pares) {
+      const v = Math.floor(s / base);
+      s -= v * base;
+      $(sel).textContent = v;
+    }
+  };
+  tick();
+  setInterval(tick, 1000);
+}
+
+/* ----- Lista de presentes ----- */
+function desenharFiltros() {
+  const cats = [{ id: "todos", nome: "Todos" }, ...catalogo.categorias];
+  $("#filtros").innerHTML = cats
+    .map((c) => `<button type="button" class="chip" data-cat="${esc(c.id)}" aria-pressed="${c.id === filtro}">${esc(c.nome)}</button>`)
+    .join("");
+}
+
+function desenharGrade() {
+  const lista = catalogo.presentes.filter((p) => filtro === "todos" || p.categoria === filtro);
+  $("#grade").innerHTML = lista.map((p) => {
+    const dadas = vendidas[p.id] || 0;
+    const completo = restante(p) === 0;
+    const noCarrinho = Number(carrinho.itens[p.id]) || 0;
+    const figura = (p.foto
+      ? `<img src="${esc(p.foto)}" alt="" loading="lazy">`
+      : ILUSTRA[p.icone] || `<svg class="ico" aria-hidden="true"><use href="#i-${esc(p.icone)}"/></svg>`)
+      + (p.destaque && !completo ? `<span class="selo-destaque">Mais desejado</span>` : "");
+    const varias = p.meta > 1;
+    const resta = restante(p);
+    const progresso = varias
+      ? `<div class="progresso"><div class="barra"><i style="width:${Math.min(100, (dadas / p.meta) * 100).toFixed(1)}%"></i></div><span>${dadas} de ${p.meta} cotas dadas</span></div>`
+      : "";
+    const valor = varias ? `${p.meta} cotas de <strong>${brl(p.cota)}</strong>`
+      : p.preco ? "Presente inteiro" : `Cota de <strong>${brl(p.cota)}</strong>`;
+    const botaoInteiro = varias && !completo && resta > 1
+      ? `<button type="button" class="btn btn-linha" data-inteiro="${esc(p.id)}">${dadas ? `Completar<span class="longo"> o presente</span> (${resta} cotas)` : `Dar <span class="longo">o presente </span>inteiro`}</button>`
+      : "";
+    return `<article class="cartao${completo ? " completo" : ""}">
+      <div class="figura">${figura}</div>
+      <h3>${esc(p.nome)}</h3>
+      ${p.produto ? `<p class="produto">${esc(p.produto)}</p>` : ""}
+      ${p.preco ? `<p class="preco">${brl(p.preco)}</p>` : ""}
+      <p class="valor">${valor}</p>
+      ${progresso}
+      <p class="no-carrinho">${noCarrinho ? `${noCarrinho} ${noCarrinho > 1 ? "cotas" : "cota"} no carrinho` : ""}</p>
+      <div class="acoes-cartao">
+        <button type="button" class="btn" data-add="${esc(p.id)}"${completo ? " disabled" : ""}>${completo ? "Presente completo" : varias ? "Presentear 1 cota" : "Presentear"}</button>
+        ${botaoInteiro}
+      </div>
+    </article>`;
+  }).join("");
+}
+
+function desenharCarrinho() {
+  const itens = itensCarrinho();
+  let html = itens.map(({ p, qtd }) => `
+    <li class="item">
+      <div class="item-nome"><strong>${esc(p.nome)}</strong><span>${p.meta > 1 ? `${brl(p.cota)} por cota · ${p.meta} cotas no total` : p.preco ? esc(p.produto || "") : `${brl(p.cota)} por cota`}</span></div>
+      <div class="item-valor">${brl(valorLinha(p, qtd))}</div>
+      <div class="qtd-cotas" role="group" aria-label="Cotas de ${esc(p.nome)}">
+        <button type="button" data-menos="${esc(p.id)}" aria-label="Uma cota a menos">&minus;</button>
+        <output aria-live="polite">${qtd}</output>
+        <button type="button" data-mais="${esc(p.id)}" aria-label="Uma cota a mais"${qtd >= limiteCotas(p) ? " disabled" : ""}>+</button>
+      </div>
+      <button type="button" class="link-botao remover" data-remover="${esc(p.id)}">Remover</button>
+    </li>`).join("");
+  if (carrinho.livre) {
+    html += `
+    <li class="item">
+      <div class="item-nome"><strong>Contribuição livre</strong><span>Valor escolhido por você</span></div>
+      <div class="item-valor">${brl(carrinho.livre)}</div>
+      <span></span>
+      <button type="button" class="link-botao remover" data-remover="livre">Remover</button>
+    </li>`;
+  }
+  const vazio = !html;
+  $("#lista-carrinho").innerHTML = html;
+  $("#carrinho-vazio").hidden = !vazio;
+  $("#linha-total").hidden = vazio;
+  $("#btn-continuar").disabled = vazio;
+  $("#total-carrinho").textContent = brl(totalCarrinho());
+  $("#total-dados").textContent = brl(totalAPagar());
+  const pct = taxaPct();
+  $("#linha-taxa").hidden = !(pct > 0);
+  if (pct > 0) $("#dados-taxa-texto").textContent = `Vou pagar no cartão e quero cobrir a taxa do Mercado Pago (+${pct.toLocaleString("pt-BR")}%, ${brl(valorTaxa())})`;
+  const n = contagemCarrinho();
+  const badge = $("#carrinho-qtd");
+  badge.textContent = n;
+  badge.hidden = n === 0;
+  $("#btn-carrinho").setAttribute("aria-label", n ? `Abrir o carrinho de presentes (${n})` : "Abrir o carrinho de presentes");
+}
+
+function desenharMural() {
+  const el = $("#mural");
+  if (!recados.length) {
+    el.innerHTML = `<p class="vazio">Os recados de quem presentear aparecem aqui.</p>`;
+    return;
+  }
+  el.innerHTML = recados.map((r) => {
+    const quando = r.pago_em ? new Date(r.pago_em).toLocaleDateString("pt-BR", { day: "numeric", month: "long" }) : "";
+    return `<figure class="recado"><blockquote>${esc(r.mensagem)}</blockquote><figcaption>${esc(r.nome)}${quando ? ` · ${esc(quando)}` : ""}</figcaption></figure>`;
+  }).join("");
+}
+
+function atualizarTudo() {
+  salvarCarrinho();
+  desenharGrade();
+  desenharCarrinho();
+}
+
+/* ----- Carrinho ----- */
+function adicionar(id) {
+  const p = presente(id);
+  if (!p) return;
+  const atual = Number(carrinho.itens[id]) || 0;
+  if (atual < limiteCotas(p)) carrinho.itens[id] = atual + 1;
+  atualizarTudo();
+  abrirGaveta(1);
+}
+
+function inteiro(id) {
+  const p = presente(id);
+  if (!p) return;
+  carrinho.itens[id] = limiteCotas(p);
+  atualizarTudo();
+  abrirGaveta(1);
+}
+
+function mudarQtd(id, delta) {
+  const p = presente(id);
+  if (!p) return;
+  const nova = Math.max(0, Math.min(limiteCotas(p), (Number(carrinho.itens[id]) || 0) + delta));
+  if (nova === 0) delete carrinho.itens[id];
+  else carrinho.itens[id] = nova;
+  atualizarTudo();
+}
+
+function remover(id) {
+  if (id === "livre") carrinho.livre = 0;
+  else delete carrinho.itens[id];
+  atualizarTudo();
+  if (!contagemCarrinho()) mostrarEtapa(1);
+}
+
+function abrirGaveta(etapa) {
+  if ($("#gaveta").hidden) focoAntes = document.activeElement;
+  $("#veu").hidden = false;
+  $("#gaveta").hidden = false;
+  document.documentElement.classList.add("travado");
+  mostrarEtapa(etapa || 1);
+  $("#gaveta [data-fechar]").focus();
+}
+
+function fecharGaveta() {
+  $("#veu").hidden = true;
+  $("#gaveta").hidden = true;
+  document.documentElement.classList.remove("travado");
+  if (focoAntes && document.contains(focoAntes)) focoAntes.focus();
+}
+
+function mostrarEtapa(n) {
+  if (n > 1 && !contagemCarrinho()) n = 1;
+  etapaAtual = n;
+  [1, 2, 3].forEach((i) => { $(`#etapa-${i}`).hidden = i !== n; });
+  $$("#passos li").forEach((li, i) => {
+    li.classList.toggle("ativo", i + 1 === n);
+    li.classList.toggle("feito-passo", i + 1 < n);
+  });
+  $("#gaveta-titulo").textContent = ["Seu carrinho", "Seus dados", "Pagamento"][n - 1];
+  if (n === 3) pagar();
+}
+
+async function pagar() {
+  const caixa = $("#caixa-pagamento");
+  const dados = { nome: $("#dados-nome").value.trim(), mensagem: $("#dados-msg").value.trim(), mural: $("#dados-mural").checked };
+  const total = brl(totalAPagar());
+  if (PREVIA) {
+    caixa.innerHTML = `<p class="rotulo">Prévia</p>
+      <p>No site publicado, este passo abre a página de pagamento do Mercado Pago, com cartão de crédito em até ${catalogo.parcelasMax}x ou Pix. Nesta prévia nada é cobrado.</p>
+      <div class="total"><span>Total</span><strong>${total}</strong></div>
+      <button class="btn" type="button" data-simular>Simular pagamento aprovado</button>`;
+    return;
+  }
+  caixa.innerHTML = `<p class="rotulo">Pagamento</p><p>Abrindo o Mercado Pago…</p>`;
+  try {
+    const corpo = { itens: itensCarrinho().map(({ p, qtd }) => ({ id: p.id, qtd })), livre: Number(carrinho.livre) || 0, cobrirTaxa: cobrirTaxa(), ...dados };
+    const r = await fetch(`${CONFIG.api}/presentear`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(corpo) });
+    const j = await r.json().catch(() => ({}));
+    if (!r.ok || !j.url) throw new Error(j.erro || "Não consegui abrir o pagamento agora. Tente de novo em instantes.");
+    guardar("casamento-pedido", { id: j.pedido, nome: dados.nome });
+    location.href = j.url;
+  } catch (e) {
+    caixa.innerHTML = `<p class="rotulo">Pagamento</p><p class="erro">${esc(e.message)}</p><button class="btn" type="button" data-tentar>Tentar de novo</button>`;
+  }
+}
+
+function simularPagamento() {
+  const nome = $("#dados-nome").value.trim();
+  const mensagem = $("#dados-msg").value.trim();
+  for (const { p, qtd } of itensCarrinho()) vendidas[p.id] = (vendidas[p.id] || 0) + qtd;
+  if (mensagem && $("#dados-mural").checked) recados.unshift({ nome, mensagem, pago_em: new Date().toISOString() });
+  carrinho = { itens: {}, livre: 0 };
+  $("#etapa-2").reset();
+  $("#dados-contador").textContent = "0/500";
+  fecharGaveta();
+  atualizarTudo();
+  desenharMural();
+  abrirModal("aprovado", nome);
+}
+
+/* ----- Agradecimento ----- */
+function abrirModal(estado, nome) {
+  const n = primeiroNome(nome);
+  const textos = {
+    aprovado: [n ? `Muito obrigado, ${n}!` : "Muito obrigado!", "Seu presente chegou. Ele vai virar um pedacinho da nossa casa."],
+    pendente: ["Quase lá!", "Assim que o Mercado Pago confirmar o pagamento, seu presente chega pra gente."],
+    falhou: ["O pagamento não foi concluído", "Seu carrinho continua salvo, se quiser tentar de novo."],
+  }[estado];
+  $("#modal-titulo").textContent = textos[0];
+  $("#modal-texto").textContent = textos[1];
+  $("#modal").hidden = false;
+  desenharRamo($("#ramo-modal"));
+  $("#modal-ok").focus();
+}
+const fecharModal = () => { $("#modal").hidden = true; };
+
+function tratarRetorno() {
+  const q = new URLSearchParams(location.search);
+  if (!q.has("pedido")) return;
+  const st = q.get("status") || q.get("collection_status") || "";
+  const salvo = ler("casamento-pedido", {}) || {};
+  if (st === "approved" || st === "pending" || st === "in_process") {
+    carrinho = { itens: {}, livre: 0 };
+    atualizarTudo();
+  }
+  abrirModal(st === "approved" ? "aprovado" : (st === "pending" || st === "in_process") ? "pendente" : "falhou", salvo.nome);
+  history.replaceState(null, "", location.pathname + location.hash);
+}
+
+/* ----- Confirmação de presença ----- */
+function configurarRsvp() {
+  const form = $("#form-rsvp");
+  if (!CONFIG.rsvpAberto) {
+    form.hidden = true;
+    $("#rsvp-fechado").hidden = false;
+    return;
+  }
+  const alternar = () => {
+    const nao = $("#rsvp-nao").checked;
+    $("#rsvp-pessoas").hidden = nao;
+    $("#rsvp-musica-campo").hidden = nao;
+  };
+  $$('input[name="vai"]', form).forEach((r) => r.addEventListener("change", alternar));
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const status = $("#rsvp-status");
+    status.textContent = "";
+    const nome = $("#rsvp-nome").value.trim();
+    if (nome.length < 2) {
+      status.textContent = "Escreva seu nome completo.";
+      $("#rsvp-nome").focus();
+      return;
+    }
+    const vai = $("#rsvp-sim").checked;
+    const corpo = {
+      nome, vai,
+      adultos: Number($("#rsvp-adultos").value) || 1,
+      criancas: Number($("#rsvp-criancas").value) || 0,
+      telefone: $("#rsvp-tel").value.trim(),
+      musica: $("#rsvp-musica").value.trim(),
+      mensagem: $("#rsvp-msg").value.trim(),
+      site: $("#rsvp-site").value,
+    };
+    const botao = form.querySelector('button[type="submit"]');
+    botao.disabled = true;
+    try {
+      if (!PREVIA) {
+        const r = await fetch(`${CONFIG.api}/rsvp`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(corpo) });
+        const j = await r.json().catch(() => ({}));
+        if (!r.ok) throw new Error(j.erro || "Não consegui enviar agora. Tente de novo em instantes.");
+      }
+      const n = primeiroNome(nome);
+      form.hidden = true;
+      $("#rsvp-feito").hidden = false;
+      $("#rsvp-feito-titulo").textContent = vai ? "Presença confirmada!" : "Obrigado por avisar";
+      $("#rsvp-feito-texto").textContent = (vai ? `Até lá, ${n}! Mal podemos esperar.` : `Vamos sentir sua falta, ${n}.`) + (PREVIA ? " (Prévia: nada foi enviado.)" : "");
+    } catch (err) {
+      status.textContent = err.message;
+    } finally {
+      botao.disabled = false;
+    }
+  });
+}
+
+/* ----- Eventos ----- */
+document.addEventListener("click", (e) => {
+  const t = e.target.closest("button, a");
+  if (!t) return;
+  if (t.dataset.add) adicionar(t.dataset.add);
+  else if (t.dataset.inteiro) inteiro(t.dataset.inteiro);
+  else if (t.dataset.cat) { filtro = t.dataset.cat; desenharFiltros(); desenharGrade(); }
+  else if (t.dataset.mais) mudarQtd(t.dataset.mais, 1);
+  else if (t.dataset.menos) mudarQtd(t.dataset.menos, -1);
+  else if (t.dataset.remover) remover(t.dataset.remover);
+  else if (t.dataset.etapa) mostrarEtapa(Number(t.dataset.etapa));
+  else if (t.hasAttribute("data-simular")) simularPagamento();
+  else if (t.hasAttribute("data-tentar")) pagar();
+  else if (t.hasAttribute("data-fechar")) fecharGaveta();
+  else if (t.id === "btn-carrinho") abrirGaveta(1);
+  else if (t.id === "btn-continuar") { mostrarEtapa(2); $("#dados-nome").focus(); }
+  else if (t.id === "modal-ok") fecharModal();
+  else if (t.id === "btn-menu") {
+    const aberto = $("#menu").classList.toggle("aberto");
+    t.setAttribute("aria-expanded", String(aberto));
+  } else if (t.closest("#menu")) {
+    $("#menu").classList.remove("aberto");
+    $("#btn-menu").setAttribute("aria-expanded", "false");
+  }
+});
+$("#veu").addEventListener("click", fecharGaveta);
+$("#modal").addEventListener("click", (e) => { if (e.target.id === "modal") fecharModal(); });
+document.addEventListener("keydown", (e) => {
+  if (e.key !== "Escape") return;
+  if (!$("#modal").hidden) fecharModal();
+  else if (!$("#gaveta").hidden) fecharGaveta();
+});
+$("#dados-msg").addEventListener("input", (e) => { $("#dados-contador").textContent = `${e.target.value.length}/500`; });
+$("#dados-taxa").addEventListener("change", () => { $("#total-dados").textContent = brl(totalAPagar()); });
+$("#etapa-2").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const nome = $("#dados-nome").value.trim();
+  if (nome.length < 2) {
+    $("#dados-status").textContent = "Escreva seu nome para os noivos saberem quem presenteou.";
+    $("#dados-nome").focus();
+    return;
+  }
+  $("#dados-status").textContent = "";
+  mostrarEtapa(3);
+});
+$("#form-livre").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const { min, max } = catalogo.valorLivre;
+  const v = Math.round(Number(String($("#valor-livre").value).replace(",", ".")) * 100) / 100;
+  if (!(v >= min && v <= max)) {
+    $("#livre-status").textContent = `Escolha um valor entre ${brl(min)} e ${brl(max)}.`;
+    return;
+  }
+  $("#livre-status").textContent = "";
+  carrinho.livre = v;
+  $("#valor-livre").value = "";
+  atualizarTudo();
+  abrirGaveta(1);
+});
+
+/* ----- Início ----- */
+async function iniciar() {
+  if (PREVIA) $("#faixa-previa").hidden = false;
+  if (CONFIG.fotoCapa) {
+    $("#foto-capa").src = CONFIG.fotoCapa;
+    $("#foto-capa").alt = CONFIG.fotoCapaAlt || "";
+    $("#hero-foto").hidden = false;
+    $("#inicio").classList.add("com-foto");
+  }
+  const endereco = CONFIG.siteUrl || location.href.split(/[?#]/)[0];
+  $("#btn-compartilhar").href = "https://wa.me/?text=" + encodeURIComponent(`Lista de presentes do casamento da Bianca e do Kevin: ${endereco}`);
+  $("#livre-figura").innerHTML = ILUSTRA.presente;
+  $("#data-pill").textContent = dataBonita();
+  $("#rodape-data").textContent = dataBonita();
+  desenharRamo($("#ramo"));
+  desenharHistoria();
+  desenharLocais();
+  iniciarContagem();
+  configurarRsvp();
+  desenharMural();
+  desenharCarrinho();
+
+  try {
+    const r = await fetch("presentes.json", { cache: "no-cache" });
+    if (!r.ok) throw new Error(String(r.status));
+    catalogo = await r.json();
+    // Presente com preço real: as cotas somam o preço (o servidor faz a mesma conta).
+    for (const p of catalogo.presentes) {
+      if (p.preco) {
+        p.meta = Math.max(1, Math.floor(Number(p.cotas)) || 1);
+        p.cota = Math.ceil(Math.round(p.preco * 100) / p.meta) / 100;
+      }
+    }
+  } catch (e) {
+    $("#grade").innerHTML = `<p class="vazio">Não consegui carregar a lista de presentes. Recarregue a página.</p>`;
+    return;
+  }
+  $$("[data-parcelas]").forEach((el) => { el.textContent = catalogo.parcelasMax; });
+  const { min, max } = catalogo.valorLivre;
+  $("#valor-livre").min = min;
+  $("#valor-livre").max = max;
+  $("#livre-faixa").textContent = `Contribuição livre, de ${brl(min)} a ${brl(max)}.`;
+  $("#livre").hidden = false;
+  for (const [id, q] of Object.entries(carrinho.itens)) {
+    const p = presente(id);
+    if (!p) delete carrinho.itens[id];
+    else carrinho.itens[id] = Math.min(Number(q) || 0, limiteCotas(p));
+  }
+  if (catalogo.precosEm) {
+    const quando = new Date(`${catalogo.precosEm}T12:00:00`).toLocaleDateString("pt-BR", { month: "long", year: "numeric" });
+    $("#nota-precos").textContent = `Preços de referência de ${quando}.`;
+    $("#nota-precos").hidden = false;
+  }
+  desenharFiltros();
+  atualizarTudo();
+
+  if (!PREVIA) {
+    try {
+      const r = await fetch(`${CONFIG.api}/lista`);
+      if (r.ok) {
+        const j = await r.json();
+        vendidas = j.cotas || {};
+        recados = j.recados || [];
+        atualizarTudo();
+        desenharMural();
+      }
+    } catch (e) { /* a lista funciona sem a contagem */ }
+  }
+  tratarRetorno();
+}
+
+iniciar();
+})();
+</script>
+</body>
+</html>

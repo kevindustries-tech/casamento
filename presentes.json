@@ -1,0 +1,32 @@
+{
+  "parcelasMax": 12,
+  "taxaOpcional": 4.98,
+  "valorLivre": {"min": 20, "max": 5000},
+  "precosEm": "2026-11-10",
+  "categorias": [
+    {"id": "cozinha", "nome": "Cozinha"},
+    {"id": "lavanderia", "nome": "Lavanderia e limpeza"},
+    {"id": "sala", "nome": "Sala"},
+    {"id": "quarto", "nome": "Quarto"}
+  ],
+  "presentes": [
+    {"id": "geladeira", "nome": "Geladeira", "categoria": "cozinha", "produto": "Brastemp Frost Free Duplex 375 L (BRM44HK)", "preco": 2717.1, "cotas": 11, "foto": "fotos/produtos/geladeira.webp", "icone": "geladeira", "fonte": "https://www.amazon.com.br/dp/B07GWVJ8LR", "destaque": true},
+    {"id": "fogao", "nome": "Fogão", "categoria": "cozinha", "produto": "Consul 4 bocas com acendimento automático (CFO4NAB)", "preco": 1079.0, "cotas": 4, "foto": "fotos/produtos/fogao.webp", "icone": "fogao", "fonte": "https://www.amazon.com.br/dp/B076CBHKPW"},
+    {"id": "micro-ondas", "nome": "Micro-ondas", "categoria": "cozinha", "produto": "Electrolux 34 L com função tira odor (MEO44)", "preco": 579.5, "cotas": 2, "foto": "fotos/produtos/micro-ondas.webp", "icone": "microondas", "fonte": "https://www.amazon.com.br/dp/B0792XQTH6"},
+    {"id": "air-fryer", "nome": "Air fryer", "categoria": "cozinha", "produto": "Mondial Grand Family 5 L (AFN-50-BI)", "preco": 244.59, "cotas": 1, "foto": "fotos/produtos/air-fryer.webp", "icone": "airfryer", "fonte": "https://www.amazon.com.br/dp/B08HZBX16R"},
+    {"id": "liquidificador", "nome": "Liquidificador", "categoria": "cozinha", "produto": "Philips Walita Série 5000, jarra de vidro 2 L", "preco": 238.2, "cotas": 1, "foto": "fotos/produtos/liquidificador.webp", "icone": "liquidificador", "fonte": "https://www.amazon.com.br/dp/B09RQDT3FM"},
+    {"id": "cafeteira", "nome": "Cafeteira", "categoria": "cozinha", "produto": "Electrolux 30 xícaras, jarra inox", "preco": 178.99, "cotas": 1, "foto": "fotos/produtos/cafeteira.webp", "icone": "cafeteira", "fonte": "https://www.amazon.com.br/dp/B0CZVGDV7V"},
+    {"id": "purificador", "nome": "Purificador de água", "categoria": "cozinha", "produto": "Electrolux, água gelada, fria e natural", "preco": 489.0, "cotas": 2, "foto": "fotos/produtos/purificador.webp", "icone": "purificador", "fonte": "https://www.amazon.com.br/dp/B0D6LTDPYB"},
+    {"id": "maquina-de-lavar", "nome": "Máquina de lavar", "categoria": "lavanderia", "produto": "Electrolux 13 kg Essential Care (LED13)", "preco": 1798.99, "cotas": 7, "foto": "fotos/produtos/maquina-de-lavar.webp", "icone": "lavadora", "fonte": "https://www.amazon.com.br/dp/B09B7X4JSZ", "destaque": true},
+    {"id": "aspirador", "nome": "Aspirador de pó", "categoria": "lavanderia", "produto": "Electrolux vertical 2 em 1, filtro HEPA (STK15)", "preco": 170.0, "cotas": 1, "foto": "fotos/produtos/aspirador.webp", "icone": "aspirador", "fonte": "https://www.amazon.com.br/dp/B094X2N4HV"},
+    {"id": "ferro", "nome": "Ferro de passar", "categoria": "lavanderia", "produto": "Arno Ecogliss Protect, base cerâmica (FECP)", "preco": 219.0, "cotas": 1, "foto": "fotos/produtos/ferro.webp", "icone": "ferro", "fonte": "https://www.amazon.com.br/dp/B0FKFM6CQX"},
+    {"id": "sofa", "nome": "Sofá", "categoria": "sala", "produto": "Retrátil e reclinável, 3 lugares, 2,10 m (Aura)", "preco": 1804.05, "cotas": 7, "foto": "fotos/produtos/sofa.webp", "icone": "sofa", "fonte": "https://www.amazon.com.br/dp/B0GYCBMT7B"},
+    {"id": "smart-tv", "nome": "Smart TV", "categoria": "sala", "produto": "TCL 50\" QLED 4K Google TV (50P7L)", "preco": 2184.05, "cotas": 9, "foto": "fotos/produtos/smart-tv.webp", "icone": "tv", "fonte": "https://www.amazon.com.br/dp/B0GYQ8Q5QR"},
+    {"id": "rack", "nome": "Rack para TV", "categoria": "sala", "produto": "Multimóveis 180 cm, 3 portas (MP1103)", "preco": 379.98, "cotas": 2, "foto": "fotos/produtos/rack.webp", "icone": "rack", "fonte": "https://www.amazon.com.br/dp/B0G1VL52YW"},
+    {"id": "mesa-de-jantar", "nome": "Mesa de jantar com cadeiras", "categoria": "sala", "produto": "Madesa Evelin, tampo de vidro e 4 cadeiras", "preco": 793.78, "cotas": 3, "foto": "fotos/produtos/mesa-de-jantar.webp", "icone": "mesa", "fonte": "https://www.amazon.com.br/dp/B0D2Y3FQF5"},
+    {"id": "cama", "nome": "Cama de casal com colchão", "categoria": "quarto", "produto": "Box baú + colchão de molas ensacadas Ortobom Airtech", "preco": 1260.0, "cotas": 5, "foto": "fotos/produtos/cama.webp", "icone": "cama", "fonte": "https://www.amazon.com.br/dp/B089DY771C", "destaque": true},
+    {"id": "guarda-roupa", "nome": "Guarda-roupa", "categoria": "quarto", "produto": "Casal 6 portas e 2 gavetas (Jamaica)", "preco": 512.05, "cotas": 2, "foto": "fotos/produtos/guarda-roupa.webp", "icone": "guardaroupa", "fonte": "https://www.amazon.com.br/dp/B0HKPPVVH6"},
+    {"id": "criados-mudos", "nome": "Par de criados-mudos", "categoria": "quarto", "produto": "Kit 2 mesas de cabeceira Pop, 2 gavetas", "preco": 230.75, "cotas": 1, "foto": "fotos/produtos/criados-mudos.webp", "icone": "criado", "fonte": "https://www.amazon.com.br/dp/B0HHKR1XWC"},
+    {"id": "ar-condicionado", "nome": "Ar-condicionado", "categoria": "quarto", "produto": "LG Smart Inverter 12.000 BTUs, frio (S3-Q12JA31E)", "preco": 2069.1, "cotas": 8, "foto": "fotos/produtos/ar-condicionado.webp", "icone": "arcondicionado", "fonte": "https://www.amazon.com.br/dp/B0FY6RY66N"}
+  ]
+}
