@@ -1,6 +1,6 @@
 {
   "parcelasMax": 12,
-  "taxaOpcional": 4.98,
+  "taxaOpcional": 0,
   "valorLivre": {"min": 20, "max": 5000},
   "precosEm": "2026-11-10",
   "categorias": [
