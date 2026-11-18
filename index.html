@@ -505,7 +505,7 @@ input:focus, textarea:focus { outline: 2px solid var(--oliva-texto); outline-off
         <p class="sobre">Vamos nos casar</p>
         <h1 class="nomes"><span>Bianca</span> <span class="e">&amp;</span> <span>Kevin</span></h1>
         <svg class="ramo" id="ramo" viewBox="0 0 400 76" aria-hidden="true"></svg>
-        <p class="data-pill" id="data-pill">Julho de 2027</p>
+        <p class="data-pill" id="data-pill">27.05.2027</p>
       </div>
       <div class="acoes">
         <a class="btn" href="#presentes">Ver lista de presentes</a>
@@ -660,7 +660,7 @@ input:focus, textarea:focus { outline: 2px solid var(--oliva-texto); outline-off
 <footer class="rodape">
   <div class="miolo">
     <p class="assina">Bianca &amp; Kevin</p>
-    <p class="quando" id="rodape-data">Julho de 2027</p>
+    <p class="quando" id="rodape-data">27.05.2027</p>
     <p>Os pagamentos dos presentes são feitos no Mercado Pago.</p>
   </div>
 </footer>
@@ -738,8 +738,8 @@ const CONFIG = {
   // Ex.: "https://abcdefgh.supabase.co/functions/v1/casamento"
   api: "",
   // Data e hora da cerimônia, quando estiverem fechadas. Ex.: "2027-07-17T16:00:00-03:00"
-  data: "",
-  mesAno: "Julho de 2027",
+  data: "2027-05-27T00:00:00-03:00",
+  mesAno: "Maio de 2027",
   // Foto de capa e fotos da seção "Nossa história" (arquivos na pasta fotos/).
   fotoCapa: "fotos/capa.webp",
   fotoCapaAlt: "Bianca e Kevin à beira de um lago",
@@ -941,7 +941,7 @@ function desenharGrade() {
     const progresso = varias
       ? `<div class="progresso"><div class="barra"><i style="width:${Math.min(100, (dadas / p.meta) * 100).toFixed(1)}%"></i></div><span>${dadas} de ${p.meta} cotas dadas</span></div>`
       : "";
-    const valor = p.comprado ? "Já comprado"
+    const valor = p.comprado ? esc(p.doador || "Já comprado")
       : varias ? `${p.meta} cotas de <strong>${brl(p.cota)}</strong>`
       : p.preco ? "Presente inteiro" : `Cota de <strong>${brl(p.cota)}</strong>`;
     const botaoInteiro = varias && !completo && resta > 1
